@@ -1,0 +1,23 @@
+.navbar{
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+
+    &__item{
+        padding: 0.5rem;
+
+        &--logo{
+            flex: 100%;
+        }
+
+        &--search-bar{
+            flex: 1;
+        }
+
+        &--upload-btn{
+            flex: 100%;
+        }
+    }
+}

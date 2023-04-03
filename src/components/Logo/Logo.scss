@@ -1,0 +1,27 @@
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 100%;
+
+    &__icon-container{
+        background-color: #0095FF;
+        border-radius: 0.25rem / 0.5rem;
+        width: 2rem;
+        height: 1.5rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__icon{
+        padding-left: 7.5%;
+    }
+
+    &__title{
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 0.25rem;
+        margin-left: 0.25rem;
+    }
+}
