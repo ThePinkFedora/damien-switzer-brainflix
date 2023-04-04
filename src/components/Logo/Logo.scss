@@ -1,27 +1,29 @@
+@use '../../styles/partials/mixins';
+
 .logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 100%;
+    @include mixins.flexbox(center,center);
 
     &__icon-container{
         background-color: #0095FF;
         border-radius: 0.25rem / 0.5rem;
+        position: relative;
         width: 2rem;
         height: 1.5rem;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        
     }
 
     &__icon{
-        padding-left: 7.5%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 0.625rem;
     }
 
     &__title{
-        font-size: 1rem;
+        font-size: 1.0625rem;
         font-weight: 600;
-        margin-top: 0.25rem;
-        margin-left: 0.25rem;
+        margin: 0.3125rem 0.5rem 0 0.375rem;
+        
     }
 }

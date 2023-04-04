@@ -1,25 +1,35 @@
 @use '../../styles/partials/colors';
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/breakpoints' as *;
 
 .search-bar{
-    // border: 1px solid gray;
-    // border-radius: 4px;
     position: relative;
 
     &__icon{
         position: absolute;
         top: 50%;
-        left: 0.4rem;
+        left: 0.75rem;
         height: 1rem;
         transform: translate(0,-50%);
+
+        @include tablet{
+            left: 1rem;
+        }
     }
 
     &__field{
+        font-size: 0.75rem;
         background-color: colors.$secondary-white;
         border: 1px solid colors.$secondary-gray;
         border-radius: 4px;
-        text-indent: 1.8rem;
+        text-indent: 2rem;
         width: 100%;
         height: 2.25rem;
+
+        @include tablet{
+            text-indent: 2.5rem;
+            height: 2.5rem;
+        }
 
         &::placeholder{
             color: colors.$secondary-black;

@@ -1,11 +1,17 @@
 @use '../../styles/partials/colors';
+@use '../../styles/partials/breakpoints' as *;
 
 .avatar{
     background-color: colors.$secondary-gray;
     object-fit: cover;
     object-position: 20%;
     border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
+    width: 2.25rem;
+    height: 2.25rem;
     display: block;
+
+    @include tablet{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 }

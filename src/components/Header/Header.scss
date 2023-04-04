@@ -1,22 +1,67 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/units';
+@use '../../styles/partials/mixins';
+
+
 .navbar{
-    padding: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    padding: 0.25rem 0.5rem;
+
+    @include tablet{
+        padding: 0.5rem 1.75rem;
+    }
+
+    &__content{
+        margin: auto;
+        max-width: units.$maxWidth;
+        @include mixins.flexbox($align-items: center,$wrap: wrap);
+    }
     
     &__item{
-        padding: 0.5rem;
+        margin: 0.5rem;
 
         &--logo{
             flex: 100%;
+            
+            @include tablet{
+                margin-right: auto;
+                flex: 0;
+            }
+            @include desktop{
+                margin-left: 0;
+            }
         }
 
         &--search-bar{
             flex: 1;
+
+            @include tablet{
+                margin-right: 1rem;
+                flex: 0 15rem;
+            }
+        }
+        
+        &--avatar{
+            @include tablet{
+                flex: 0;
+                order: 2;
+            }
+            @include desktop{
+                margin-right: 0.75rem;
+            }
         }
 
         &--upload-btn{
             flex: 100%;
+
+            @include tablet{
+                margin-right: 0.75rem;
+                flex: 0 9.75rem;
+            }
+            @include desktop{
+                margin-right: 1.75rem;
+                flex: 0 9.25rem;
+            }
+            
         }
     }
 }
