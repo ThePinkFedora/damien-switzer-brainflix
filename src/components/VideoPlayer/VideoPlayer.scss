@@ -1,0 +1,22 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors';
+
+
+
+.video-player{
+    background-color: colors.$secondary-black;
+    @include mixins.flexbox(center);
+
+    @include tablet{
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+    }
+
+    &__video{
+        background-color: colors.$primary-black;
+        max-width: 100%;
+        flex: 0 1 52.875rem;
+        display: block;
+    }
+}
