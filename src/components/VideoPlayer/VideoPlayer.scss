@@ -15,8 +15,8 @@
 
     &__video{
         background-color: colors.$primary-black;
-        max-width: 100%;
-        flex: 0 1 52.875rem;
+        max-width: min(100%, 52.875rem);
+        margin: auto;
         display: block;
     }
 }
