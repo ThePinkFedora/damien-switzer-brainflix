@@ -1,4 +1,7 @@
+@use '../../styles/partials/colors';
+
 .avatar{
+    background-color: colors.$secondary-gray;
     object-fit: cover;
     object-position: 20%;
     border-radius: 50%;

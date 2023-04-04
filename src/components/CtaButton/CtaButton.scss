@@ -1,15 +1,14 @@
+@use '../../styles/partials/colors';
 
 .cta-button{
     line-height: 1;
-    color: white;
-    background-color: #0096FF;
+    color: colors.$primary-white;
+    background-color: colors.$primary-blue;
     border: none;
     border-radius: 4px;
     width: 100%;
     height: 2.5rem;
     position: relative;
-
-
 
     &__icon{
         position: absolute;
