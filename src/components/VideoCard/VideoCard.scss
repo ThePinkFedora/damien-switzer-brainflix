@@ -1,32 +1,30 @@
 @use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/mixins';
 
 .video-card{
-    display: flex;
     margin-bottom: 0.75rem;
+    height: 3.75rem;
+    display: flex;
 
     @include tablet{
         margin-bottom: 1.5rem;
+        height: 4.0625rem;
     }
 
     &__thumbnail{
         object-fit: cover;
-        flex-shrink: 0;
         border-radius: 4px;
-        width: 6.25rem;
-        height: 3.75rem;
         margin-right: 1rem;
+        flex-shrink: 0;
+        width: 6.25rem;
         
-
         @include tablet{
-            width: 6.875rem;
-            height: 4.0625rem;
+            width: 6.875rem;    
         }
     }
 
     &__info{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        @include mixins.flexbox(space-between,$direction: column);
     }
 
     &__title{
