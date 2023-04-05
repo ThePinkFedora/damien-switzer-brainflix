@@ -7,10 +7,10 @@ function CommentCard(props){
             <div className="comment-card__avatar-wrapper">
                 <Avatar imageSrc="" />
             </div>
-            <div class="comment-card__content">
-                <h4 class="comment-card__name">{props.name}</h4>
-                <span class="comment-card__timestamp">3 years ago</span>
-                <p class="comment-card__text">{props.comment}</p>
+            <div className="comment-card__content">
+                <h4 className="comment-card__name">{props.name}</h4>
+                <span className="comment-card__timestamp">3 years ago</span>
+                <p className="comment-card__text">{props.comment}</p>
             </div>
         </article>
     );

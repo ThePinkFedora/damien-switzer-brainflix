@@ -8,7 +8,7 @@ import uploadIcon from "../../assets/images/upload.svg";
 export default function Header() {
   return (
     <header className="navbar">
-      <div class="navbar__content">
+      <div className="navbar__content">
         <div className="navbar__item navbar__item--logo">
           <Logo />
         </div>

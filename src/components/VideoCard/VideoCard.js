@@ -1,8 +1,13 @@
 import './VideoCard.scss';
 
 function VideoCard(props){
+
+    const handleClick = () => {
+        props.onClick();
+    };
+
     return (
-        <article className="video-card">
+        <article className="video-card" onClick={handleClick}>
             <img className="video-card__thumbnail" src={props.image} alt="thumbnail"/>
             <div className="video-card__info">
                 <h4 className="video-card__title">{props.title}</h4>

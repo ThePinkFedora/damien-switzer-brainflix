@@ -25,10 +25,10 @@ function CommentForm(props) {
       </div>
       <form className="comment-form__form" onSubmit={handleSubmit}>
         <div className="comment-form__item comment-form__item--comment">
-          <label class="comment-form__label" htmlFor="comment">
+          <label className="comment-form__label" htmlFor="comment">
             JOIN THE CONVERSATION
           </label>
-          <textarea name="comment" class="comment-form__textarea" placeholder="Add a new comment"></textarea>
+          <textarea name="comment" className="comment-form__textarea" placeholder="Add a new comment"></textarea>
         </div>
         <div className="comment-form__item comment-form__item--submit">
         <CtaButton text="COMMENT" iconSrc={commentIcon} iconAlt="comment" />
