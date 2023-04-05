@@ -1,0 +1,89 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors';
+
+
+
+.video-info{
+    &__title{
+        @include fonts.pageheader;
+        // border-bottom: 1px solid colors.$secondary-gray;
+        @include mixins.divider;
+        padding-top: 0.125rem;
+        padding-bottom: 0.875rem;
+
+        @include tablet{
+            border: none;
+            padding-bottom: 0;
+        }
+    }
+
+    &__item{
+        color: colors.$secondary-gray;
+        margin-bottom: 0.75rem;
+
+        @include tablet{
+            font-size: 0.75rem;
+            margin-bottom: 0.25rem;
+        }
+
+        &--strong{
+            color: colors.$secondary-black;
+            font-weight: 600;
+            
+            @include tablet{
+                font-size: 0.875rem;
+            }
+        }
+
+        &--left{
+            @include tablet{
+                margin-right: 2rem;
+            }
+        }
+
+        &--right{
+            @include tablet{
+                margin-left: 2rem;
+            }
+        }
+        
+    }
+
+    &__icon{
+        margin-right: 0.5rem;
+        vertical-align: text-bottom;
+    }
+
+    &__bottom-row{
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        @include mixins.divider;
+        
+        @include tablet{
+            padding-top: 0.5rem;
+        }
+    }
+
+    &__left{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__right{
+        margin-left: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__description{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        
+        @include tablet{
+            padding-top: 1.5rem;
+        }
+    }
+}

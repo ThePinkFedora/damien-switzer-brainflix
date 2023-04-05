@@ -1,9 +1,24 @@
 @use './styles/partials/resets';
-@use './styles/partials/breakpoints.scss' as *;
-@use './styles/partials/fonts.scss';
+@use './styles/partials/breakpoints' as *;
+@use './styles/partials/fonts';
+@use './styles/partials/units';
+
 
 
 
 body{
     @include fonts.body;
+}
+
+.bottom-section{
+    padding: 1rem;
+
+    @include tablet{
+        padding: 1.75rem 2.25rem 1.75rem 2.375rem;
+    }
+    
+    &__content{
+        max-width: units.$maxWidth;
+        margin: auto
+    }
 }
