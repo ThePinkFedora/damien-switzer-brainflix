@@ -1,0 +1,23 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors';
+@use '../../styles/partials/fonts';
+
+
+
+.next-videos{
+    max-width: 19.5rem;
+    &__title{
+        @include fonts.subheader;
+        color: colors.$primary-gray;
+        
+        margin-bottom: 0.875rem;
+
+        @include tablet-only{
+            margin-bottom: 1.375rem;
+        }
+    }
+
+    @include desktop{
+        padding-left: 1.4375rem;
+    }
+}

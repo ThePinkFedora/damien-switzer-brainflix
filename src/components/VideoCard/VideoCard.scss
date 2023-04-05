@@ -1,0 +1,39 @@
+@use '../../styles/partials/breakpoints' as *;
+
+.video-card{
+    display: flex;
+    margin-bottom: 0.75rem;
+
+    @include tablet{
+        margin-bottom: 1.5rem;
+    }
+
+    &__thumbnail{
+        object-fit: cover;
+        flex-shrink: 0;
+        border-radius: 4px;
+        width: 6.25rem;
+        height: 3.75rem;
+        margin-right: 1rem;
+        
+
+        @include tablet{
+            width: 6.875rem;
+            height: 4.0625rem;
+        }
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title{
+        font-weight: 600;
+    }
+
+    &__channel{
+
+    }
+}

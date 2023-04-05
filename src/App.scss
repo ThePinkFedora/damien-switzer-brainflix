@@ -2,6 +2,8 @@
 @use './styles/partials/breakpoints' as *;
 @use './styles/partials/fonts';
 @use './styles/partials/units';
+@use './styles/partials/colors';
+
 
 
 
@@ -18,7 +20,16 @@ body{
     }
     
     &__content{
+        display: flex;
+        flex-wrap: wrap;
         max-width: units.$maxWidth;
-        margin: auto
+        margin: auto;
+
+       > *:first-child {
+        @include desktop{
+            border-right: 1px solid colors.$secondary-gray;
+            max-width: 68.1%;
+        }
+       }
     }
 }

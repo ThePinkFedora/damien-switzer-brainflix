@@ -7,6 +7,13 @@ $desktop-size: 1280px;
     }
 }
 
+/// Breakpoint which starts at tablet-size but stops at desktop-size
+@mixin tablet-only{
+    @media (min-width: $tablet-size) and (max-width: ($desktop-size - 1px)){
+        @content;
+    }
+}
+
 @mixin desktop{
     @media (min-width: $desktop-size){
         @content;
