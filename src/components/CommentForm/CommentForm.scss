@@ -9,16 +9,17 @@
 
 //# Comment Form
 .comment-form{
-    border-bottom: 1px solid colors.$secondary-gray;
+    @include mixins.divider;
     padding-bottom: 1rem;
     @include mixins.flexbox($align-items:flex-start);
 
     @include tablet{
-        padding-bottom: 1.5rem;
+        padding-bottom: 1.75rem;
     }
 
     @include desktop{
         padding-left: 0.625rem;
+        padding-bottom: 1.5rem;
         padding-right: 1.5rem;
     }
 
