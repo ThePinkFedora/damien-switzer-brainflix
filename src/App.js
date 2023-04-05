@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import VideoInfo from "./components/VideoInfo/VideoInfo";
 import NextVideos from "./components/NextVideos/NextVideos";
+import CommentsSection from "./components/CommentsSection/CommentsSection";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <div className="bottom-section__content">
           <div className="bottom-section__sub-container">
             <VideoInfo />
+            <CommentsSection />
           </div>
           <div className="bottom-section__sub-container">
             <NextVideos />
