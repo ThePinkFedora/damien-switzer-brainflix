@@ -2,16 +2,28 @@
 @use '../../styles/partials/breakpoints' as *;
 
 .avatar{
+    color: transparent;
     background-color: colors.$secondary-gray;
     object-fit: cover;
     object-position: 20%;
     border-radius: 50%;
     width: 2.25rem;
     height: 2.25rem;
+    position: relative;
     display: block;
 
     @include tablet{
         width: 2.5rem;
         height: 2.5rem;
+    }
+
+    //Image placeholder (Covers missing image icon)
+    &::before{
+        content: '';
+        border-radius: 50%;
+        display: block;
+        background-color: colors.$secondary-gray;
+        position: absolute;
+        inset: 0;
     }
 }

@@ -1,0 +1,50 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors';
+@use '../../styles/partials/mixins';
+
+.comment-card{
+    border-bottom: 1px solid colors.$secondary-gray;
+    @include mixins.flexbox($align-items: flex-start);
+    padding-top: 0.75rem;
+    padding-bottom: 0.625rem;
+
+    @include tablet{
+        padding-top: 1.625rem;
+        padding-bottom: 1.125rem;
+    }
+
+    @include desktop{
+        padding-left: 0.625rem;
+        padding-right: 1.5rem;
+    }
+
+    &__avatar-wrapper{
+        margin-right: 1rem;
+
+        @include desktop{
+            margin-right: 2.25rem;
+        }
+    }
+
+    &__content{
+        flex-grow: 1;
+        @include mixins.flexbox($wrap:wrap);
+    }
+    
+    &__name{
+        font-weight: 600;
+        white-space: nowrap;
+        flex: 1;
+        height: 1em; 
+        margin-bottom: 0.875rem;
+    }
+
+    &__timestamp{
+        color: colors.$primary-gray;
+        height: 1em; 
+    }
+    
+    &__text{
+        flex: 100%;
+    }
+}

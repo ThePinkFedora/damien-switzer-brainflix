@@ -1,11 +1,12 @@
 import './Avatar.scss';
 import avatarImage from '../../assets/images/mohan-muruge.jpg';
 
-const altText = "mohan-muruge";
-
-function Avatar(){
+function Avatar(props){
     return (
-        <img className="avatar" src={avatarImage} alt={altText}/>
+        <img className="avatar" 
+            src={(typeof props.imageSrc !== 'undefined') ? props.imageSrc : avatarImage} 
+            alt="avatar"
+        />
     );
 }
 
