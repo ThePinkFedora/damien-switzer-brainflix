@@ -4,7 +4,6 @@ import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import VideoInfo from "./components/VideoInfo/VideoInfo";
 import NextVideos from "./components/NextVideos/NextVideos";
 
-
 function App() {
   return (
     <div className="App">
@@ -12,9 +11,12 @@ function App() {
       <VideoPlayer />
       <div className="bottom-section">
         <div className="bottom-section__content">
-        <VideoInfo />
-        <NextVideos />
-          
+          <div className="bottom-section__sub-container">
+            <VideoInfo />
+          </div>
+          <div className="bottom-section__sub-container">
+            <NextVideos />
+          </div>
         </div>
       </div>
     </div>
