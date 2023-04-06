@@ -34,7 +34,11 @@ body{
         padding-top: 1rem;
 
         @include tablet{
-            padding-top: 1.75rem;
+            padding-top: 1.5rem;
+        }
+
+        @include desktop{
+            padding-top: 1.875rem;
         }
 
         &:first-child{

@@ -20,7 +20,7 @@ function VideoInfo(props) {
       <h1 className="video-info__title">{props.title}</h1>
       <div className="video-info__bottom-row">
         <div className="video-info__left">
-          <span className="video-info__item video-info__item--left video-info__item--strong">{props.channel}</span>
+          <span className="video-info__item video-info__item--left video-info__item--strong">By {props.channel}</span>
           <div className="video-info__item video-info__item--left">{new Date(props.timestamp).toLocaleDateString("en-US",{ month: "2-digit",day: "2-digit",year:"numeric"})}</div>
         </div>
         <div className="video-info__right">

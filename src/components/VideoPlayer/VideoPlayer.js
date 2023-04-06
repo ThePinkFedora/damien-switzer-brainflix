@@ -1,9 +1,19 @@
 import './VideoPlayer.scss';
 
-function VideoPlayer(){
+/**
+ * 
+ * @param {object} props 
+ * @param {string} props.videoSrc
+ * @param {string} props.posterSrc
+ */
+function VideoPlayer(props){
+
+    //We will leave this empty until the endpoint is ready
+    const videoSource = "";//props.videoSrc;
+
     return (
         <div className="video-player">
-            <video className="video-player__video" poster="https://i.imgur.com/l2Xfgpl.jpg" controls>
+            <video className="video-player__video" src={videoSource} poster={props.posterSrc} controls>
             <source type="video/webm"/>
             Your browser does not support the video tag.
             </video>

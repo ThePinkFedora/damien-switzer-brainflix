@@ -19,7 +19,7 @@
     }
 
     &__item{
-        color: colors.$secondary-gray;
+        color: colors.$primary-gray;
         margin-bottom: 0.75rem;
 
         @include tablet{
@@ -30,9 +30,10 @@
         &--strong{
             color: colors.$secondary-black;
             font-weight: 600;
+            font-size: 0.875rem;
             
             @include tablet{
-                font-size: 0.875rem;
+                font-size: 0.9688rem;
             }
         }
 

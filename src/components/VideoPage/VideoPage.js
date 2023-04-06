@@ -18,7 +18,6 @@ function VideoPage() {
   };
 
   const postComment = (comment) => {
-
     /**
      * Simulates a change applied when posting a comment to the server
      */
@@ -47,7 +46,10 @@ function VideoPage() {
 
   return (
     <main className="video-page">
-      <VideoPlayer />
+      <VideoPlayer
+        posterSrc={currentVideo.image}
+        videoSrc={currentVideo.video}
+      />
       <div className="bottom-section">
         <div className="bottom-section__content">
           <div className="bottom-section__sub-container">

@@ -2,7 +2,15 @@
 @use '../../styles/partials/mixins';
 @use '../../styles/partials/colors';
 
-
+// Video Layout
+//  - Player
+//      - Mobile: 
+//          - Height: 181px or 56.5625vw
+//      - Tablet:
+//          - Height: 394px 51.3020vw
+//      - Desktop:
+//          - Height: 479px 37.
+// 
 
 .video-player{
     background-color: colors.$secondary-black;
@@ -15,8 +23,16 @@
 
     &__video{
         background-color: colors.$primary-black;
-        max-width: min(100%, 52.875rem);
         margin: auto;
         display: block;
+        max-width: 100%;
+
+        @include tablet{
+            height: 24.625rem;
+        }
+        
+        @include desktop{
+            height: 30rem;
+        }
     }
 }
