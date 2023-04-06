@@ -8,14 +8,19 @@ function CommentForm({onComment}) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if(event.target.comment.value){
-      const name = "USERNAME";
-      const comment = event.target.comment.value;
-      
-      onComment(name,comment);
+    const name = "USERNAME";
+    const comment = event.target.comment.value;
 
-      event.target.reset();
+    if(comment.length === 0){
+      event.target.comment.classList.add("comment-form__commentbox--invalid");
+      return;
     }
+
+    event.target.comment.classList.remove("comment-form__commentbox--invalid");
+    
+    onComment(name,comment);
+
+    event.target.reset();
   };
 
   return (
@@ -28,7 +33,7 @@ function CommentForm({onComment}) {
           <label className="comment-form__label" htmlFor="comment">
             JOIN THE CONVERSATION
           </label>
-          <textarea name="comment" className="comment-form__textarea" placeholder="Add a new comment"></textarea>
+          <textarea name="comment" className="comment-form__commentbox" placeholder="Add a new comment"></textarea>
         </div>
         <div className="comment-form__item comment-form__item--submit">
         <CtaButton text="COMMENT" iconSrc={commentIcon} iconAlt="comment" />

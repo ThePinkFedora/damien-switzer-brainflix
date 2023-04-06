@@ -14,7 +14,7 @@
 
     &__thumbnail{
         object-fit: cover;
-        border-radius: 4px;
+        @include mixins.rounded-corners();
         margin-right: 1rem;
         flex-shrink: 0;
         width: 6.25rem;

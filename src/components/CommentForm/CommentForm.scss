@@ -3,10 +3,6 @@
 @use '../../styles/partials/mixins';
 @use '../../styles/partials/fonts';
 
-
-
-
-
 //# Comment Form
 .comment-form{
     @include mixins.divider;
@@ -70,10 +66,10 @@
         color: colors.$primary-gray;
     }
 
-    &__textarea{
+    &__commentbox{
         background-color: colors.$secondary-white;
         border: 1px solid colors.$secondary-gray;
-        border-radius: 4px;
+        @include mixins.rounded-corners();
         padding-top: 0.6875rem;
         padding-left: 0.6875rem;
         width: 100%;
@@ -86,8 +82,17 @@
             height: 2.5rem;
         }
 
+        &:focus{
+            border-color: colors.$primary-blue;
+            outline: none; //Chrome adds a thick outline by default
+        }
+
         &::placeholder{
             color: colors.$primary-black;
+        }
+
+        &--invalid{
+            border-color: colors.$error-color;
         }
     }
 

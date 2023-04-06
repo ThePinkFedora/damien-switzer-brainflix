@@ -1,9 +1,7 @@
+@use './styles/partials/colors';
 @use './styles/partials/fonts';
 
-
-
-
 body{
+    color: colors.$primary-black;
     @include fonts.body;
 }
-
