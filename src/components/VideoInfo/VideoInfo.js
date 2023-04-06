@@ -2,30 +2,40 @@ import "./VideoInfo.scss";
 import viewsIcon from "../../assets/images/views.svg";
 import likesIcon from "../../assets/images/likes.svg";
 
-function VideoInfo() {
+/**
+ * 
+ * @param {object} props 
+ * @param {string} props.title
+ * @param {string} props.channel
+ * @param {string} props.description
+ * @param {number} props.views
+ * @param {number} props.likes
+ * @param {number} props.timestamp
+ * 
+ * @returns 
+ */
+function VideoInfo(props) {
   return (
     <section className="video-info">
-      <h1 className="video-info__title">BMX Rampage: 2021 Highlights</h1>
+      <h1 className="video-info__title">{props.title}</h1>
       <div className="video-info__bottom-row">
         <div className="video-info__left">
-          <span className="video-info__item video-info__item--left video-info__item--strong">By Red Crow</span>
-          <div className="video-info__item video-info__item--left">07/11/2021</div>
+          <span className="video-info__item video-info__item--left video-info__item--strong">{props.channel}</span>
+          <div className="video-info__item video-info__item--left">{new Date(props.timestamp).toLocaleDateString("en-US",{ month: "2-digit",day: "2-digit",year:"numeric"})}</div>
         </div>
         <div className="video-info__right">
           <div className="video-info__item video-info__item--right">
             <img className="video-info__icon" src={viewsIcon} alt="views" />
-            1,001,023
+            {props.views}
           </div>
           <div className="video-info__item video-info__item--right">
             <img className="video-info__icon" src={likesIcon} alt="likes" />
-            110,985
+            {props.likes}
           </div>
         </div>
       </div>
       <p className="video-info__description">
-        On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest
-        moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that
-        was needed for event veteran Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title
+        {props.description}
       </p>
     </section>
   );
