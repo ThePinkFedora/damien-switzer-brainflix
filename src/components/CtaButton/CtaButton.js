@@ -8,11 +8,11 @@ import './CtaButton.scss';
  * @param {string} props.iconAlt - The icon alt text 
  * @returns 
  */
-function CtaButton(props){
+function CtaButton({text,iconSrc,iconAlt}){
     return (
         <button className="cta-button">
-            <img className="cta-button__icon" src={props.iconSrc} alt={props.iconAlt}/>
-            {props.text}
+            <img className="cta-button__icon" src={iconSrc} alt={iconAlt}/>
+            {text}
         </button>
     );
 }

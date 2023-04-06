@@ -1,5 +1,6 @@
 import "./VideoPage.scss";
 import { useState } from "react";
+import {simulatePostComment} from '../../js/utils';
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import VideoInfo from "../VideoInfo/VideoInfo";
 import NextVideos from "../NextVideos/NextVideos";
@@ -18,28 +19,6 @@ function VideoPage() {
   };
 
   const postComment = (comment) => {
-    /**
-     * Simulates a change applied when posting a comment to the server
-     */
-    function simulatePostComment(comment,videoId) {
-      return new Promise((resolve, reject) => {
-        const video = videoDetails.find(video => video.id === videoId);
-
-        let comments = video.comments;
-        const databaseComment = {
-          id: crypto.randomUUID(),
-          name: comment.name,
-          comment: comment.comment,
-          likes: 0,
-          timestamp: new Date().getTime(),
-        };
-        comments = [databaseComment, ...comments];
-
-        const updatedVideo = {...currentVideo,comments:comments};
-        resolve({ data: updatedVideo });
-      });
-    }
-
     simulatePostComment(comment,currentVideo.id)
         .then(response => setCurrentVideo(response.data))
   };

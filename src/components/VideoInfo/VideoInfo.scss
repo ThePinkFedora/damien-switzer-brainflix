@@ -21,10 +21,12 @@
     &__item{
         color: colors.$primary-gray;
         margin-bottom: 0.75rem;
+        flex-basis: 100%;
 
         @include tablet{
             font-size: 0.75rem;
             margin-bottom: 0.25rem;
+            flex-basis: auto;
         }
 
         &--strong{

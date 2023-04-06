@@ -3,7 +3,7 @@ import CtaButton from "../CtaButton/CtaButton";
 import Avatar from "../Avatar/Avatar";
 import commentIcon from "../../assets/images/add-comment.svg";
 
-function CommentForm(props) {
+function CommentForm({onComment}) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,7 +12,7 @@ function CommentForm(props) {
       const name = "USERNAME";
       const comment = event.target.comment.value;
       
-      props.onComment(name,comment);
+      onComment(name,comment);
 
       event.target.reset();
     }

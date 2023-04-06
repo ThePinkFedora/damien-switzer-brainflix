@@ -1,0 +1,49 @@
+@use '../../styles/partials/resets';
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/units';
+@use '../../styles/partials/colors';
+
+.bottom-section{
+    padding: 0 1rem 1rem;
+
+    @include tablet{
+        padding: 0 2.25rem 1.75rem 2.375rem;
+    }
+    
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: units.$maxWidth;
+        margin: auto;
+
+        @include desktop{
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__sub-container{
+        padding-top: 1rem;
+
+        @include tablet{
+            padding-top: 1.5rem;
+        }
+
+        @include desktop{
+            padding-top: 1.875rem;
+        }
+
+        &:first-child{
+            @include desktop{
+                border-right: 1px solid colors.$secondary-gray;
+                max-width: 68.1%;
+            }
+        }
+
+        &:nth-child(2){
+            @include desktop{
+                padding-left: 1.4375rem;
+            }
+        }
+    }
+}

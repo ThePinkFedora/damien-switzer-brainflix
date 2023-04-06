@@ -1,10 +1,10 @@
 import './Avatar.scss';
 import avatarImage from '../../assets/images/mohan-muruge.jpg';
 
-function Avatar(props){
+function Avatar({imageSrc}){
     return (
         <img className="avatar" 
-            src={(typeof props.imageSrc !== 'undefined') ? props.imageSrc : avatarImage} 
+            src={(typeof imageSrc !== 'undefined') ? imageSrc : avatarImage} 
             alt="avatar"
         />
     );
