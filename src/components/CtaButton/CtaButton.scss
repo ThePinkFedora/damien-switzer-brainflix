@@ -14,10 +14,6 @@
     height: 2.5rem;
     cursor: pointer;
 
-    @include tablet{
-        width: 9.375rem;
-    }
-
     &:hover{
         background-color: colors.$secondary-blue;
     }

@@ -75,13 +75,12 @@
         }
     }
 
-    &__left{
+    &__container{
         @include mixins.flexbox($wrap: wrap);
-    }
-
-    &__right{
-        margin-left: 2rem;
-        @include mixins.flexbox($wrap: wrap);
+        flex: 0 47%;
+        @include tablet{
+            flex: 0 auto;
+        }
     }
 
     &__description{

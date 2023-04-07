@@ -16,7 +16,7 @@
         @include mixins.flexbox($align-items: center,$wrap: wrap);
     }
     
-    &__item{
+    &__container{
         margin: 0.5rem;
 
         &--logo{
@@ -57,11 +57,11 @@
                 margin-right: 0.75rem;
                 flex: 0 9.75rem;
             }
+            
             @include desktop{
                 margin-right: 1.75rem;
                 flex: 0 9.25rem;
             }
-            
         }
     }
 }

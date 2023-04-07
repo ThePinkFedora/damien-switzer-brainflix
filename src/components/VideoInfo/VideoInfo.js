@@ -20,11 +20,11 @@ function VideoInfo({title, channel, description, views, likes, timestamp}) {
     <section className="video-info">
       <h1 className="video-info__title">{title}</h1>
       <div className="video-info__bottom-row">
-        <div className="video-info__left">
+        <div className="video-info__container video-info__container--left">
           <span className="video-info__item video-info__item--left video-info__item--strong">By {channel}</span>
           <div className="video-info__item video-info__item--left">{createDateString(timestamp)}</div>
         </div>
-        <div className="video-info__right">
+        <div className="video-info__container video-info__container--right">
           <div className="video-info__item video-info__item--right">
             <img className="video-info__icon" src={viewsIcon} alt="views" />
             {views}

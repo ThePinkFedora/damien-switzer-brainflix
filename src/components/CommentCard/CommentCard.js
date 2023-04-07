@@ -7,7 +7,7 @@ import Avatar from '../Avatar/Avatar';
 function CommentCard({name,comment,timestamp}){
     return (
         <article className="comment-card">
-            <div className="comment-card__avatar-wrapper">
+            <div className="comment-card__container comment-card__container--avatar">
                 <Avatar imageSrc="" />
             </div>
             <div className="comment-card__content">

@@ -31,7 +31,7 @@ function VideoPage() {
       />
       <div className="bottom-section">
         <div className="bottom-section__content">
-          <div className="bottom-section__sub-container">
+          <div className="bottom-section__container bottom-section__container--video-details">
             <VideoInfo
               title={currentVideo.title}
               channel={currentVideo.channel}
@@ -42,7 +42,7 @@ function VideoPage() {
             />
             <CommentsSection comments={currentVideo.comments} onComment={postComment} />
           </div>
-          <div className="bottom-section__sub-container">
+          <div className="bottom-section__container bottom-section__container--next-videos">
             <NextVideos videos={nextVideos} onSelect={selectVideo} />
           </div>
         </div>

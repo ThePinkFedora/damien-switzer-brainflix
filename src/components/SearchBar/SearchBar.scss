@@ -16,7 +16,7 @@
         left: 0.75rem;
         width: 1rem;
         height: 1rem;
-        // transform: translate(0,-50%);
+        pointer-events: none;
 
         @include tablet{
             left: 1rem;

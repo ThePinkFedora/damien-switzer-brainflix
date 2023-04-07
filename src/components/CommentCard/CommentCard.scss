@@ -18,11 +18,13 @@
         padding-right: 1.5rem;
     }
 
-    &__avatar-wrapper{
-        margin-right: 1rem;
+    &__container{
+        &--avatar{
+            padding-right: 1rem;
 
-        @include desktop{
-            margin-right: 2.25rem;
+            @include desktop{
+                padding-right: 2.25rem;
+            }
         }
     }
 
@@ -45,6 +47,6 @@
     }
     
     &__text{
-        flex: 100%;
+        width: 100%;
     }
 }

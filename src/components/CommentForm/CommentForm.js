@@ -25,17 +25,17 @@ function CommentForm({onComment}) {
 
   return (
     <div className="comment-form">
-      <div className="comment-form__avatar-wrapper">
+      <div className="comment-form__container comment-form__container--avatar">
         <Avatar />
       </div>
       <form className="comment-form__form" onSubmit={handleSubmit}>
-        <div className="comment-form__item comment-form__item--comment">
+        <div className="comment-form__container comment-form__container--commentbox">
           <label className="comment-form__label" htmlFor="comment">
             JOIN THE CONVERSATION
           </label>
           <textarea name="comment" className="comment-form__commentbox" placeholder="Add a new comment"></textarea>
         </div>
-        <div className="comment-form__item comment-form__item--submit">
+        <div className="comment-form__container comment-form__container--submit">
         <CtaButton text="COMMENT" iconSrc={commentIcon} iconAlt="comment" />
         </div>
       </form>

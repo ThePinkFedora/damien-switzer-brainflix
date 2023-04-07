@@ -9,16 +9,16 @@ export default function Header() {
   return (
     <header className="navbar">
       <div className="navbar__content">
-        <div className="navbar__item navbar__item--logo">
+        <div className="navbar__container navbar__container--logo">
           <Logo />
         </div>
-        <div className="navbar__item navbar__item--search-bar">
+        <div className="navbar__container navbar__container--search-bar">
           <SearchBar />
         </div>
-        <div className="navbar__item navbar__item--avatar">
+        <div className="navbar__container navbar__container--avatar">
           <Avatar />
         </div>
-        <div className="navbar__item navbar__item--upload-btn">
+        <div className="navbar__container navbar__container--upload-btn">
           <CtaButton text="UPLOAD" iconSrc={uploadIcon} iconAlt="upload" />
         </div>
       </div>
