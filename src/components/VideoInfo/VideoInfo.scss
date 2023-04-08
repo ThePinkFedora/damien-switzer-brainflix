@@ -89,5 +89,9 @@
         @include tablet{
             padding-top: 1.5rem;
         }
+
+        @include desktop{
+            padding-right: 1.375rem;
+        }
     }
 }

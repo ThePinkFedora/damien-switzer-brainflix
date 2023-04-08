@@ -1,10 +1,14 @@
 import './Avatar.scss';
-import avatarImage from '../../assets/images/mohan-muruge.jpg';
 
+/**
+ * An icon for displaying a user's avatar.
+ * @param {object} props 
+ * @param {string} props.imageSrc - The source URL for the avatar.
+ */
 function Avatar({imageSrc}){
     return (
         <img className="avatar" 
-            src={(typeof imageSrc !== 'undefined') ? imageSrc : avatarImage} 
+            src={imageSrc} 
             alt="avatar"
         />
     );

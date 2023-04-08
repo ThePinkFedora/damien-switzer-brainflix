@@ -1,4 +1,5 @@
-import videoDetails from '../data/video-details.json';
+/** This is assumed to be the current user's avatar for this prototype */
+import mohanMurgeAvatar from '../assets/images/mohan-muruge.jpg';
 
 const relativeTimeFormat = new Intl.RelativeTimeFormat("en");
 
@@ -33,3 +34,5 @@ export function createRelativeTimeString(date) {
     let years = months / 12;
     return relativeTimeFormat.format(Math.ceil(-years),"year");
 }
+
+export const getUserAvatar = () => mohanMurgeAvatar;

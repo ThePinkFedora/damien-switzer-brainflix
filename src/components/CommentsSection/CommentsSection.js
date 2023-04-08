@@ -3,25 +3,18 @@ import CommentForm from '../CommentForm/CommentForm';
 import CommentList from '../CommentList/CommentList';
 
 /**
- * 
+ * Section which displays a {@link CommentForm} and {@link CommentList}; allowing users to view and post comments.
  * @param {object} props
- * @param {Array} props.comments
- * @param {function} props.onComment
+ * @param {object[]} props.comments - List of comments
+ * @param {(comment: string) => {}} props.onComment - Callback for posting a comment
  * @returns 
  */
 function CommentsSection({comments,onComment}){
-    const addComment = (name,comment) => {
-        const commentObject = {
-            name: name,
-            comment: comment
-        };
-        onComment(commentObject);
-    };
 
     return (
         <section className="comments-section">
-            <h4 className="comments-section__count">3 Comments</h4>
-            <CommentForm onComment={addComment} />
+            <h4 className="comments-section__count">{comments.length} Comments</h4>
+            <CommentForm onComment={onComment} />
             <CommentList comments={comments}/>
         </section>
     );

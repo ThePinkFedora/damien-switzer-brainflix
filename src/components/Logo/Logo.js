@@ -1,6 +1,9 @@
 import './Logo.scss';
 import icon from '../../assets/images/play.svg';
 
+/**
+ * BrainFlix logo component.
+ */
 function Logo(){
     return (
         <a href="./" className="logo">

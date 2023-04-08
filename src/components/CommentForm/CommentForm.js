@@ -1,14 +1,20 @@
 import "./CommentForm.scss";
+import {getUserAvatar} from '../../js/utils';
 import CtaButton from "../CtaButton/CtaButton";
 import Avatar from "../Avatar/Avatar";
 import commentIcon from "../../assets/images/add-comment.svg";
 
+/**
+ * Form for posting new comments.
+ * @param {object} props
+ * @param {(comment: string) => {}} props.onComment - The callback for posting a comment.
+ * @returns 
+ */
 function CommentForm({onComment}) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const name = "USERNAME";
     const comment = event.target.comment.value;
 
     if(comment.length === 0){
@@ -18,7 +24,7 @@ function CommentForm({onComment}) {
 
     event.target.comment.classList.remove("comment-form__commentbox--invalid");
     
-    onComment(name,comment);
+    onComment(comment);
 
     event.target.reset();
   };
@@ -26,7 +32,7 @@ function CommentForm({onComment}) {
   return (
     <div className="comment-form">
       <div className="comment-form__container comment-form__container--avatar">
-        <Avatar />
+        <Avatar imageSrc={getUserAvatar()} />
       </div>
       <form className="comment-form__form" onSubmit={handleSubmit}>
         <div className="comment-form__container comment-form__container--commentbox">
