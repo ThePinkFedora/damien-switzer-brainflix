@@ -3,7 +3,8 @@
 @use '../../styles/partials/mixins';
 
 .comment-card{
-    border-bottom: 1px solid colors.$secondary-gray;
+    // border-bottom: 1px solid colors.$secondary-gray;
+    @include mixins.divider(top);
     @include mixins.flexbox($align-items: flex-start);
     padding-top: 0.75rem;
     padding-bottom: 0.625rem;

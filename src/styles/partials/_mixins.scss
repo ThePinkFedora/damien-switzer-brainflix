@@ -8,8 +8,8 @@
     flex-wrap: $wrap;
 }
 
-@mixin divider{
-    border-bottom: 1px solid colors.$secondary-gray;
+@mixin divider($side: bottom){
+    border-#{$side}: 1px solid colors.$secondary-gray;
 }
 
 /// 4px rounded corners, which are very common amoungst BrainFlix elements

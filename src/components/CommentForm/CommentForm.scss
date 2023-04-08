@@ -5,7 +5,6 @@
 
 //# Comment Form
 .comment-form{
-    @include mixins.divider;
     padding: 0 0 1rem;
     @include mixins.flexbox($align-items:flex-start);
 

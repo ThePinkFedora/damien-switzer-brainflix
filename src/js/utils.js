@@ -7,27 +7,29 @@ export function createDateString(date) {
 }
 
 export function createRelativeTimeString(date) {
-  return relativeTimeFormat.format(date);
-}
+    let now = new Date();
+    let difference = now - date; //In milliseconds
 
-/**
- * Simulates a change applied when posting a comment to the server
- */
-export function simulatePostComment(comment, videoId) {
-  return new Promise(async (resolve, reject) => {
-    const video = videoDetails.find((video) => video.id === videoId);
+    console.log("Date difference: ",difference);
 
-    let comments = video.comments;
-    const databaseComment = {
-      id: crypto.randomUUID(),
-      name: comment.name,
-      comment: comment.comment,
-      likes: 0,
-      timestamp: new Date().getTime(),
-    };
-    comments = [databaseComment, ...comments];
+    let seconds = difference/1000;
+    if(seconds < 60)return relativeTimeFormat.format(Math.ceil(-seconds),'second');
 
-    const updatedVideo = { ...video, comments: comments };
-    resolve({ data: updatedVideo });
-  });
+    let minutes = seconds / 60;
+    if(minutes < 60)return relativeTimeFormat.format(Math.ceil(-minutes),"minute");
+    
+    let hours = minutes / 60;
+    if(hours < 24)return relativeTimeFormat.format(Math.ceil(-hours),"hour");
+    
+    let days = hours / 24;
+    if(days < 7)return relativeTimeFormat.format(Math.ceil(-days),"day");
+
+    let weeks = days / 7;
+    if(days < 30)return relativeTimeFormat.format(Math.ceil(-weeks),"week");
+
+    let months = days / 30;
+    if(months < 12)return relativeTimeFormat.format(Math.ceil(-months),"month");
+
+    let years = months / 12;
+    return relativeTimeFormat.format(Math.ceil(-years),"year");
 }

@@ -1,11 +1,11 @@
-import "./Header.scss";
+import "./Navbar.scss";
 import Logo from "../Logo/Logo";
 import Avatar from "../Avatar/Avatar";
 import SearchBar from "../SearchBar/SearchBar";
 import CtaButton from "../CtaButton/CtaButton";
 import uploadIcon from "../../assets/images/upload.svg";
 
-export default function Header() {
+function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar__content">
@@ -26,4 +26,4 @@ export default function Header() {
   );
 }
 
-// export default Header;
+export default Navbar;

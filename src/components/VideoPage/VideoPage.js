@@ -19,8 +19,7 @@ function VideoPage() {
   };
 
   const postComment = (comment) => {
-    simulatePostComment(comment,currentVideo.id)
-        .then(response => setCurrentVideo(response.data))
+    
   };
 
   return (
