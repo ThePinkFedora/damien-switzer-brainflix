@@ -1,32 +1,32 @@
-@use '../../styles/partials/colors';
-@use '../../styles/partials/breakpoints' as *;
+@use "../../styles/partials/colors";
+@use "../../styles/partials/breakpoints" as *;
 
-.avatar{
-    color: transparent;
+.avatar {
+  color: transparent;
+  background-color: colors.$secondary-gray;
+  object-fit: cover;
+  object-position: 20%;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: block;
+
+  @include tablet {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /// Broken or missing images will display an empty container with a mercury background
+  &::after {
+    content: " ";
     background-color: colors.$secondary-gray;
-    object-fit: cover;
-    object-position: 20%;
-    overflow: hidden;
-    border-radius: 50%;
-    position: relative;
-    width: 2.25rem;
-    height: 2.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: block;
-
-    @include tablet{
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    /// Broken or missing images will display an empty container with a mercury background
-    &::after{
-        content: ' ';
-        background-color: colors.$secondary-gray;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: block;    
-    }
+  }
 }

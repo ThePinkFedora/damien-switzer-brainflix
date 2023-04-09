@@ -1,31 +1,32 @@
 import "./CommentForm.scss";
-import {getUserAvatar} from '../../js/utils';
+import { getUserAvatar } from "../../js/utils";
 import CtaButton from "../CtaButton/CtaButton";
 import Avatar from "../Avatar/Avatar";
 import commentIcon from "../../assets/images/add-comment.svg";
 
 /**
- * Form for posting new comments.
+ * Form posting new comments.
  * @param {object} props
  * @param {(comment: string) => {}} props.onComment - The callback for posting a comment.
- * @returns 
+ * @returns
  */
-function CommentForm({onComment}) {
-
+function CommentForm({ onComment }) {
+  /**
+   * @param {SubmitEvent} event
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const comment = event.target.comment.value;
 
-    if(comment.length === 0){
+    // If the comment field is empty, mark the field invalid and return.
+    if (comment.length === 0) {
       event.target.comment.classList.add("comment-form__commentbox--invalid");
       return;
     }
 
+    // Remove invalid state from the comment field
     event.target.comment.classList.remove("comment-form__commentbox--invalid");
-    
     onComment(comment);
-
     event.target.reset();
   };
 
@@ -42,10 +43,11 @@ function CommentForm({onComment}) {
           <textarea name="comment" className="comment-form__commentbox" placeholder="Add a new comment"></textarea>
         </div>
         <div className="comment-form__container comment-form__container--submit">
-        <CtaButton text="COMMENT" iconSrc={commentIcon} iconAlt="comment" />
+          <CtaButton text="COMMENT" iconSrc={commentIcon} iconAlt="comment" />
         </div>
       </form>
     </div>
   );
 }
+
 export default CommentForm;

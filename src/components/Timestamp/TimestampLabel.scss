@@ -1,0 +1,25 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/mixins";
+
+.timestamp-label {
+    color: colors.$primary-gray;
+    position: relative;
+    height: 1em;
+
+    &__tooltip {
+        color: colors.$primary-white;
+        background-color: colors.$secondary-black;
+        opacity: 0;
+        @include mixins.rounded-corners;
+        display: none;
+        padding: 0.25rem 0.5rem;
+        position: absolute;
+        z-index: 99;
+        transition: all 0.4s ease;
+    }
+
+    &:hover &__tooltip {
+        opacity: 1;
+        display: block;
+    }
+}

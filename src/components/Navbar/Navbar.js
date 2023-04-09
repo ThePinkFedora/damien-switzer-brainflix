@@ -1,5 +1,5 @@
 import "./Navbar.scss";
-import {getUserAvatar} from '../../js/utils';
+import { getUserAvatar } from "../../js/utils";
 import Logo from "../Logo/Logo";
 import Avatar from "../Avatar/Avatar";
 import SearchBar from "../SearchBar/SearchBar";

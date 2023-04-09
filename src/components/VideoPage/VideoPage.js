@@ -8,30 +8,32 @@ import CommentsSection from "../CommentsSection/CommentsSection";
 import videos from "../../data/videos.json";
 import videoDetails from "../../data/video-details.json";
 
-
 /**
- * A main content section for a viewing a video.
+ * Main content section for a viewing a video.
  * Video page includes {@link VideoPlayer}, {@link VideoInfo}, {@link CommentsSection}, and {@link NextVideos}.
  */
 function VideoPage() {
   const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
   const nextVideos = videos.filter((video) => video.id !== currentVideo.id);
 
+  /**
+   * Sets the {@link currentVideo}.
+   * @param {string} videoId - The id of the video to select.
+   */
   const selectVideo = (videoId) => {
     const video = videoDetails.find((video) => video.id === videoId);
     setCurrentVideo(video);
   };
 
-  const postComment = (comment) => {
-    
-  };
+  /**
+   * Posts a comment on the current video. (Not implemented)
+   * @param {string} comment - The comment to be posted.
+   */
+  const postComment = (comment) => {};
 
   return (
     <main className="video-page">
-      <VideoPlayer
-        posterSrc={currentVideo.image}
-        videoSrc={currentVideo.video}
-      />
+      <VideoPlayer posterSrc={currentVideo.image} videoSrc={currentVideo.video} />
       <div className="bottom-section">
         <div className="bottom-section__content">
           <div className="bottom-section__container bottom-section__container--video-details">
@@ -53,4 +55,5 @@ function VideoPage() {
     </main>
   );
 }
+
 export default VideoPage;

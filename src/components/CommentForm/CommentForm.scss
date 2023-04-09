@@ -1,67 +1,67 @@
-@use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/colors';
-@use '../../styles/partials/mixins';
-@use '../../styles/partials/fonts';
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors";
+@use "../../styles/partials/mixins";
+@use "../../styles/partials/fonts";
 
 //# Comment Form
-.comment-form{
+.comment-form {
     padding: 0 0 1rem;
-    @include mixins.flexbox($align-items:flex-start);
+    @include mixins.flexbox($align-items: flex-start);
 
-    @include tablet{
+    @include tablet {
         padding: 0 0 1.75rem;
     }
 
-    @include desktop{
+    @include desktop {
         padding: 0 1.5rem 1.5rem 0.625rem;
     }
 
-    &__container{
-        &--avatar{
+    &__container {
+        &--avatar {
             padding: 1.5rem 1rem 0 0;
 
-            @include desktop{
+            @include desktop {
                 padding: 1.5rem 2.25rem 0 0;
             }
         }
 
-        &--commentbox{
+        &--commentbox {
             padding: 0 0 1rem;
 
-            @include tablet{
+            @include tablet {
                 padding: 0 1.5rem 0 0;
                 flex: 1;
             }
         }
 
-        &--submit{
-            @include tablet{
+        &--submit {
+            @include tablet {
                 flex: 0 0 9.75rem;
             }
 
-            @include desktop{
+            @include desktop {
                 flex: 0 0 9.25rem;
             }
         }
     }
 
-    //## Comment Form 
-    &__form{
+    //## Comment Form
+    &__form {
         flex-grow: 1;
         @include mixins.flexbox($direction: column);
 
-        @include tablet{
+        @include tablet {
             flex-direction: row;
             align-items: flex-end;
         }
     }
 
-    &__label{
+    &__label {
         @include fonts.labelsbuttons;
         color: colors.$primary-gray;
     }
 
-    &__commentbox{
+    &__commentbox {
         background-color: colors.$secondary-white;
         border: 1px solid colors.$secondary-gray;
         @include mixins.rounded-corners();
@@ -70,22 +70,22 @@
         height: 6rem;
         resize: none;
         display: block;
-        
-        @include tablet{
+
+        @include tablet {
             padding-left: 1rem;
             height: 2.5rem;
         }
 
-        &:focus{
+        &:focus {
             border-color: colors.$primary-blue;
             outline: none; //Chrome adds a thick outline by default
         }
 
-        &::placeholder{
+        &::placeholder {
             color: colors.$primary-black;
         }
 
-        &--invalid{
+        &--invalid {
             border-color: colors.$error-color;
         }
     }

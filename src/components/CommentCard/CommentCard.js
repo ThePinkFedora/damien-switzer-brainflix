@@ -1,6 +1,6 @@
 import "./CommentCard.scss";
-import { createRelativeTimeString } from "../../js/utils";
 import Avatar from "../Avatar/Avatar";
+import TimestampLabel from "../Timestamp/TimestampLabel";
 
 /**
  * A card element which displays a comment.
@@ -17,12 +17,11 @@ function CommentCard({ name, comment, timestamp }) {
       </div>
       <div className="comment-card__content">
         <h4 className="comment-card__name">{name}</h4>
-        <span className="comment-card__timestamp">{createRelativeTimeString(timestamp)}</span>
+        <TimestampLabel timestamp={timestamp} />
         <p className="comment-card__text">{comment}</p>
       </div>
     </article>
   );
 }
-
 
 export default CommentCard;

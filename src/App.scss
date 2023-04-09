@@ -1,8 +1,8 @@
-@use './styles/partials/colors';
-@use './styles/partials/fonts';
-@use './styles/partials/resets';
+@use "./styles/partials/colors";
+@use "./styles/partials/fonts";
+@use "./styles/partials/resets";
 
-body{
+body {
     color: colors.$primary-black;
     @include fonts.body;
 }

@@ -1,22 +1,27 @@
-@use './breakpoints' as *;
+@use "./breakpoints" as *;
 
-$font-family: 'Avenir Next';
+$font-family: "Avenir Next";
 
 @font-face {
     font-family: $font-family;
-    src: url("../../assets/fonts/avenir-next-ltpro-regular.otf") format('opentype'), url("../../assets/fonts/avenir-next-ltpro-regular.ttf") format("truetype");
+    src: url("../../assets/fonts/avenir-next-ltpro-regular.otf")
+            format("opentype"),
+        url("../../assets/fonts/avenir-next-ltpro-regular.ttf")
+            format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: $font-family;
-    src: url("../../assets/fonts/avenir-next-ltpro-demi.otf") format('opentype'), url("../../assets/fonts/avenir-next-ltpro-demi.ttf") format("truetype");
+    src: url("../../assets/fonts/avenir-next-ltpro-demi.otf") format("opentype"),
+        url("../../assets/fonts/avenir-next-ltpro-demi.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: $font-family;
-    src: url("../../assets/fonts/avenir-next-ltpro-bold.otf") format('opentype'), url("../../assets/fonts/avenir-next-ltpro-bold.ttf") format("truetype");
+    src: url("../../assets/fonts/avenir-next-ltpro-bold.otf") format("opentype"),
+        url("../../assets/fonts/avenir-next-ltpro-bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
@@ -40,7 +45,7 @@ $font-labelsbuttons-mobile: 600 #{0.75rem}/#{1.25rem} $font-family;
 //## Tablet/Desktop
 
 //Page Header
-$font-pageheader-tablet: 600 #{2.0625rem}/#{2.75rem} $font-family;
+$font-pageheader-tablet: 700 #{2.0625rem}/#{2.75rem} $font-family;
 //Section Header
 $font-sectionheader-tablet: 600 #{2.25rem}/#{1} $font-family;
 //Subheadder
@@ -53,44 +58,44 @@ $font-footer-tablet: 400 #{0.875rem}/#{1.25rem} $font-family;
 $font-labelsbuttons-tablet: 600 #{0.75rem}/#{1.25rem} $font-family;
 
 //# Typography Mixins
-@mixin pageheader{
+@mixin pageheader {
     font: $font-pageheader-mobile;
-    @include tablet{
+    @include tablet {
         font: $font-pageheader-tablet;
     }
 }
 
-@mixin sectionheader{
+@mixin sectionheader {
     font: $font-sectionheader-mobile;
-    @include tablet{
+    @include tablet {
         font: $font-sectionheader-tablet;
     }
 }
 
-@mixin subheader{
+@mixin subheader {
     font: $font-subheader-mobile;
-    @include tablet{
+    @include tablet {
         font: $font-subheader-tablet;
     }
 }
 
-@mixin body{
+@mixin body {
     font: $font-body-mobile;
-    @include tablet{
+    @include tablet {
         font: $font-body-tablet;
     }
 }
 
-@mixin footer{
+@mixin footer {
     font: $font-footer-mobile;
-    @include tablet{
+    @include tablet {
         font: $font-footer-tablet;
     }
 }
 
-@mixin labelsbuttons{
+@mixin labelsbuttons {
     font: $font-labelsbuttons-mobile;
-    @include tablet{
+    @include tablet {
         font: $font-labelsbuttons-tablet;
     }
 }

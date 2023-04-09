@@ -1,4 +1,4 @@
-import './CtaButton.scss';
+import "./CtaButton.scss";
 
 /**
  * A call-to-action button with assignable text and icon.
@@ -6,15 +6,15 @@ import './CtaButton.scss';
  * @param {string} props.text - The button text.
  * @param {string} props.iconSrc - The icon source url.
  * @param {string} props.iconAlt - The icon alt text.
- * @returns 
+ * @returns
  */
-function CtaButton({text,iconSrc,iconAlt}){
-    return (
-        <button className="cta-button">
-            <img className="cta-button__icon" src={iconSrc} alt={iconAlt}/>
-            {text}
-        </button>
-    );
+function CtaButton({ text, iconSrc, iconAlt }) {
+  return (
+    <button className="cta-button">
+      <img className="cta-button__icon" src={iconSrc} alt={iconAlt} />
+      {text}
+    </button>
+  );
 }
 
-export default CtaButton; 
+export default CtaButton;

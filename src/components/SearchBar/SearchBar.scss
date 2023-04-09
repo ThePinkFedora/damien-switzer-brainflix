@@ -1,14 +1,12 @@
-@use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/colors';
-@use '../../styles/partials/fonts';
-@use '../../styles/partials/mixins';
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors";
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/mixins";
 
-
-.search-bar{
+.search-bar {
     position: relative;
-    height: 2.5rem;
 
-    &__icon{
+    &__icon {
         margin: auto;
         position: absolute;
         top: 0;
@@ -18,12 +16,12 @@
         height: 1rem;
         pointer-events: none;
 
-        @include tablet{
+        @include tablet {
             left: 1rem;
         }
     }
 
-    &__field{
+    &__field {
         font-size: 0.75rem;
         border: 1px solid colors.$secondary-gray;
         background-color: colors.$secondary-white;
@@ -33,17 +31,17 @@
         width: 100%;
         height: 2.25rem;
 
-        @include tablet{
+        @include tablet {
             text-indent: 2.5rem;
             height: 2.5rem;
         }
 
-        &:focus{
+        &:focus {
             border-color: colors.$primary-blue;
             outline: none; //Chrome adds a thick outline by default
         }
 
-        &::placeholder{
+        &::placeholder {
             color: colors.$primary-black;
         }
     }
