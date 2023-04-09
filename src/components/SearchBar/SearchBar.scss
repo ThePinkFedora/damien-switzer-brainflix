@@ -23,7 +23,6 @@
 
     &__field {
         font-size: 0.75rem;
-        border: 1px solid colors.$secondary-gray;
         background-color: colors.$secondary-white;
         border: 1px solid colors.$secondary-gray;
         @include mixins.rounded-corners();

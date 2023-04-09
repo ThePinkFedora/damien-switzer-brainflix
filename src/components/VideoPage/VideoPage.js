@@ -1,5 +1,5 @@
 import "./VideoPage.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import VideoInfo from "../VideoInfo/VideoInfo";
 import NextVideos from "../NextVideos/NextVideos";
@@ -15,6 +15,11 @@ import videoDetails from "../../data/video-details.json";
 function VideoPage() {
   const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
   const nextVideos = videos.filter((video) => video.id !== currentVideo.id);
+
+  //Syncronize page title to include the title of the video.
+  useEffect(() => {
+    document.title = `BrainFlix: ${currentVideo.title}`;
+  });
 
   /**
    * Sets the {@link currentVideo}.

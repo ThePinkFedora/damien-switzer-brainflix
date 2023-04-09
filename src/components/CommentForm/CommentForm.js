@@ -37,12 +37,13 @@ function CommentForm({ onComment }) {
       </div>
       <form className="comment-form__form" onSubmit={handleSubmit}>
         <div className="comment-form__container comment-form__container--commentbox">
-          <label className="comment-form__label" htmlFor="comment">
+          <label className="comment-form__label" htmlFor="commentBox">
             JOIN THE CONVERSATION
           </label>
           <textarea
-            name="comment"
             className="comment-form__commentbox"
+            id="commentBox"
+            name="comment"
             placeholder="Add a new comment"
           ></textarea>
         </div>

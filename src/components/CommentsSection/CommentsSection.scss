@@ -10,6 +10,11 @@
     }
 
     &__count {
+        font-weight: 600;
         margin-bottom: 1rem;
+
+        @include tablet {
+            font-weight: 700;
+        }
     }
 }

@@ -4,6 +4,8 @@
 @use "../../styles/partials/colors";
 
 .video-info {
+    padding-left: 0.125rem;
+
     &__title {
         @include fonts.pageheader;
         @include mixins.divider;
@@ -16,7 +18,6 @@
     }
 
     &__item {
-        color: colors.$primary-gray;
         margin-bottom: 0.75rem;
         flex-basis: 100%;
 
@@ -28,12 +29,15 @@
 
         &--strong {
             font-weight: 600;
-            font-size: 0.875rem;
-            color: colors.$secondary-black;
 
             @include tablet {
-                font-size: 0.9688rem;
+                font-weight: 700;
+                font-size: 0.875rem;
             }
+        }
+
+        &--soft {
+            color: colors.$primary-gray;
         }
 
         &--left {

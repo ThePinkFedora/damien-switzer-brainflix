@@ -2,30 +2,6 @@
 
 $font-family: "Avenir Next";
 
-@font-face {
-    font-family: $font-family;
-    src: url("../../assets/fonts/avenir-next-ltpro-regular.otf")
-            format("opentype"),
-        url("../../assets/fonts/avenir-next-ltpro-regular.ttf")
-            format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: $font-family;
-    src: url("../../assets/fonts/avenir-next-ltpro-demi.otf") format("opentype"),
-        url("../../assets/fonts/avenir-next-ltpro-demi.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: $font-family;
-    src: url("../../assets/fonts/avenir-next-ltpro-bold.otf") format("opentype"),
-        url("../../assets/fonts/avenir-next-ltpro-bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-}
-
 /// Creates a font value to be used with the CSS font attribute.
 /// @param {Number} $weight - The font-weight
 /// @param {Number} $size - The font-size
@@ -89,13 +65,6 @@ $font-labelsbuttons-tablet: create-font(600, 0.75rem, 1.25rem);
     font: $font-body-mobile;
     @include tablet {
         font: $font-body-tablet;
-    }
-}
-
-@mixin footer {
-    font: $font-footer-mobile;
-    @include tablet {
-        font: $font-footer-tablet;
     }
 }
 

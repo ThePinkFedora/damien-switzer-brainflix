@@ -4,7 +4,7 @@ import VideoPage from "./components/VideoPage/VideoPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Navbar />
       <VideoPage />
     </div>

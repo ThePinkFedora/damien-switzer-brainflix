@@ -8,7 +8,7 @@
     padding: 0 1rem 0rem;
 
     @include tablet {
-        padding: 0 2.25rem 0 2.375rem;
+        padding: 0 2.25rem 0 2.25rem;
     }
 
     &__content {
@@ -24,13 +24,16 @@
 
     &__container {
         padding-top: 1rem;
+        padding-bottom: 1rem;
 
         @include tablet {
             padding-top: 1.5rem;
+            padding-bottom: 2.25rem;
         }
 
         @include desktop {
             padding-top: 1.875rem;
+            padding-bottom: 4rem;
         }
 
         &--video-details {

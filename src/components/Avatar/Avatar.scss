@@ -4,10 +4,10 @@
 .avatar {
     color: transparent;
     background-color: colors.$secondary-gray;
+    border-radius: 50%;
     object-fit: cover;
     object-position: 20%;
     overflow: hidden;
-    border-radius: 50%;
     position: relative;
     width: 2.25rem;
     height: 2.25rem;

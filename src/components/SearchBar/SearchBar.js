@@ -8,7 +8,12 @@ function SearchBar() {
   return (
     <div className="search-bar">
       <img className="search-bar__icon" src={searchIcon} alt="search" />
-      <input className="search-bar__field" type="search" placeholder="Search" />
+      <input
+        className="search-bar__field"
+        type="search"
+        name="search"
+        placeholder="Search"
+      />
     </div>
   );
 }

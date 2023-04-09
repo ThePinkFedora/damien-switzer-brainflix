@@ -1,0 +1,25 @@
+@use "./fonts" as *;
+
+@font-face {
+    font-family: $font-family;
+    src: url("../../assets/fonts/avenir-next-ltpro-regular.otf")
+            format("opentype"),
+        url("../../assets/fonts/avenir-next-ltpro-regular.ttf")
+            format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: $font-family;
+    src: url("../../assets/fonts/avenir-next-ltpro-demi.otf") format("opentype"),
+        url("../../assets/fonts/avenir-next-ltpro-demi.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: $font-family;
+    src: url("../../assets/fonts/avenir-next-ltpro-bold.otf") format("opentype"),
+        url("../../assets/fonts/avenir-next-ltpro-bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
