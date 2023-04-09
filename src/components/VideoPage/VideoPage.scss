@@ -1,48 +1,47 @@
-@use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/colors';
-@use '../../styles/partials/fonts';
-@use '../../styles/partials/mixins';
-@use '../../styles/partials/units';
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors";
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/mixins";
+@use "../../styles/partials/units";
 
-
-.bottom-section{
+.bottom-section {
     padding: 0 1rem 0rem;
 
-    @include tablet{
+    @include tablet {
         padding: 0 2.25rem 0 2.375rem;
     }
-    
-    &__content{
+
+    &__content {
         display: flex;
         flex-wrap: wrap;
-        max-width: units.$maxWidth;
+        max-width: units.$max-width;
         margin: auto;
 
-        @include desktop{
+        @include desktop {
             flex-wrap: nowrap;
         }
     }
 
-    &__container{
+    &__container {
         padding-top: 1rem;
 
-        @include tablet{
+        @include tablet {
             padding-top: 1.5rem;
         }
 
-        @include desktop{
+        @include desktop {
             padding-top: 1.875rem;
         }
 
-        &--video-details{
-            @include desktop{
+        &--video-details {
+            @include desktop {
                 @include mixins.divider(right);
                 max-width: 68.1%;
             }
         }
-        
-        &--next-videos{
-            @include desktop{
+
+        &--next-videos {
+            @include desktop {
                 padding-left: 1.1875rem;
             }
         }

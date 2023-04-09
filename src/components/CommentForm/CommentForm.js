@@ -40,7 +40,11 @@ function CommentForm({ onComment }) {
           <label className="comment-form__label" htmlFor="comment">
             JOIN THE CONVERSATION
           </label>
-          <textarea name="comment" className="comment-form__commentbox" placeholder="Add a new comment"></textarea>
+          <textarea
+            name="comment"
+            className="comment-form__commentbox"
+            placeholder="Add a new comment"
+          ></textarea>
         </div>
         <div className="comment-form__container comment-form__container--submit">
           <CtaButton text="COMMENT" iconSrc={commentIcon} iconAlt="comment" />

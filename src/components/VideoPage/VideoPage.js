@@ -33,7 +33,10 @@ function VideoPage() {
 
   return (
     <main className="video-page">
-      <VideoPlayer posterSrc={currentVideo.image} videoSrc={currentVideo.video} />
+      <VideoPlayer
+        posterSrc={currentVideo.image}
+        videoSrc={currentVideo.video}
+      />
       <div className="bottom-section">
         <div className="bottom-section__content">
           <div className="bottom-section__container bottom-section__container--video-details">
@@ -45,7 +48,10 @@ function VideoPage() {
               likes={currentVideo.likes}
               timestamp={currentVideo.timestamp}
             />
-            <CommentsSection comments={currentVideo.comments} onComment={postComment} />
+            <CommentsSection
+              comments={currentVideo.comments}
+              onComment={postComment}
+            />
           </div>
           <div className="bottom-section__container bottom-section__container--next-videos">
             <NextVideos videos={nextVideos} onSelect={selectVideo} />

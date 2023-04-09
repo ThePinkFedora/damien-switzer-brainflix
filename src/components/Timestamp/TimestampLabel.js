@@ -1,5 +1,9 @@
 import "./TimestampLabel.scss";
-import { createDateTimeString, createRelativeTimeString, createDateString } from "../../js/utils";
+import {
+  createDateTimeString,
+  createRelativeTimeString,
+  createDateString,
+} from "../../js/utils";
 
 /**
  * A inline element for displaying a timestamp. The timestamp is displayed in relative format and includes a tooltip to reveal the specific date.
@@ -9,8 +13,12 @@ import { createDateTimeString, createRelativeTimeString, createDateString } from
 function TimestampLabel({ timestamp }) {
   return (
     <span className="timestamp-label">
-      <time datetime={createDateTimeString(timestamp)}>{createRelativeTimeString(timestamp)}</time>
-      <span className="timestamp-label__tooltip">{createDateString(timestamp)}</span>
+      <time datetime={createDateTimeString(timestamp)}>
+        {createRelativeTimeString(timestamp)}
+      </time>
+      <span className="timestamp-label__tooltip">
+        {createDateString(timestamp)}
+      </span>
     </span>
   );
 }

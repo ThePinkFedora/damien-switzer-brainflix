@@ -12,7 +12,12 @@ function VideoPlayer({ videoSrc, posterSrc }) {
 
   return (
     <section className="video-player">
-      <video className="video-player__video" src={videoSource} poster={posterSrc} controls>
+      <video
+        className="video-player__video"
+        src={videoSource}
+        poster={posterSrc}
+        controls
+      >
         <source type="video/webm" />
         Your browser does not support the video tag.
       </video>

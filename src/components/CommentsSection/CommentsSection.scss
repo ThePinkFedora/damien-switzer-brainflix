@@ -1,16 +1,15 @@
-@use '../../styles/partials/breakpoints' as *;
+@use "../../styles/partials/breakpoints" as *;
 
-.comments-section{
-
-    @include tablet{
+.comments-section {
+    @include tablet {
         margin-top: 1rem;
     }
 
-    @include desktop{
+    @include desktop {
         margin-top: 2rem;
     }
 
-    &__count{
+    &__count {
         margin-bottom: 1rem;
     }
 }

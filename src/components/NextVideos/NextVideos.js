@@ -15,7 +15,13 @@ function NextVideos({ videos, onSelect }) {
       <ul className="next-videos__list">
         {videos.map((video) => (
           <li>
-            <VideoCard key={video.id} title={video.title} channel={video.channel} image={video.image} onClick={() => onSelect(video.id)} />
+            <VideoCard
+              key={video.id}
+              title={video.title}
+              channel={video.channel}
+              image={video.image}
+              onClick={() => onSelect(video.id)}
+            />
           </li>
         ))}
       </ul>

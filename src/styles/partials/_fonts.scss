@@ -26,36 +26,42 @@ $font-family: "Avenir Next";
     font-style: normal;
 }
 
+/// Creates a font value to be used with the CSS font attribute.
+/// @param {Number} $weight - The font-weight
+/// @param {Number} $size - The font-size
+/// @param {Number} $height - The line-height
+/// @param {String} $family [-family] - The font-family, defaults to the global $font-family
+/// @return {Font} -
+@function create-font($weight, $size: 1em, $height: 1, $family: $font-family) {
+    @return $weight $size / #{$height} $family;
+}
+
 //# Font Values
 
 //## Mobile
 //Page Header
-$font-pageheader-mobile: 600 #{1.5rem}/#{2rem} $font-family;
+$font-pageheader-mobile: create-font(600, 1.5rem, 2rem);
 //Section Header
-$font-sectionheader-mobile: 600 #{1.5rem}/#{1} $font-family;
+$font-sectionheader-mobile: create-font(600, 1.5rem, 1);
 //Subheader
-$font-subheader-mobile: 600 #{0.75rem}/#{1.375rem} $font-family;
+$font-subheader-mobile: create-font(600, 0.75rem, 1.375rem);
 //Body
-$font-body-mobile: 400 #{0.8125rem}/#{1.125rem} $font-family;
-//Footer
-$font-footer-mobile: 400 #{0.8125rem}/#{1.125rem} $font-family;
+$font-body-mobile: create-font(400, 0.8125rem, 1.125rem);
 //Labels/Buttons
-$font-labelsbuttons-mobile: 600 #{0.75rem}/#{1.25rem} $font-family;
+$font-labelsbuttons-mobile: create-font(600, 0.75rem, 1.25rem);
 
 //## Tablet/Desktop
 
 //Page Header
-$font-pageheader-tablet: 700 #{2.0625rem}/#{2.75rem} $font-family;
+$font-pageheader-tablet: create-font(700, 2rem, 2.75rem);
 //Section Header
-$font-sectionheader-tablet: 600 #{2.25rem}/#{1} $font-family;
+$font-sectionheader-tablet: create-font(600, 2.25rem, 1);
 //Subheadder
-$font-subheader-tablet: 600 #{0.75rem}/#{1.375rem} $font-family;
+$font-subheader-tablet: create-font(600, 0.75rem, 1.375rem);
 //Body
-$font-body-tablet: 400 #{0.875rem}/#{1.375rem} $font-family;
-//Footer
-$font-footer-tablet: 400 #{0.875rem}/#{1.25rem} $font-family;
+$font-body-tablet: create-font(400, 0.875rem, 1.375rem);
 //Labels/Buttons
-$font-labelsbuttons-tablet: 600 #{0.75rem}/#{1.25rem} $font-family;
+$font-labelsbuttons-tablet: create-font(600, 0.75rem, 1.25rem);
 
 //# Typography Mixins
 @mixin pageheader {

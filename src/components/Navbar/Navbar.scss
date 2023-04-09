@@ -1,64 +1,63 @@
-@use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/units';
-@use '../../styles/partials/mixins';
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/units";
+@use "../../styles/partials/mixins";
 
-
-.navbar{
+.navbar {
     padding: 0.25rem 0.5rem 0.5rem;
 
-    @include tablet{
+    @include tablet {
         padding: 0.5rem 1.75rem;
     }
 
-    &__content{
+    &__content {
         margin: auto;
-        max-width: units.$maxWidth;
-        @include mixins.flexbox($align-items: center,$wrap: wrap);
+        max-width: units.$max-width;
+        @include mixins.flexbox($align-items: center, $wrap: wrap);
     }
-    
-    &__container{
+
+    &__container {
         margin: 0.5rem;
 
-        &--logo{
+        &--logo {
             flex: 100%;
-            
-            @include tablet{
+
+            @include tablet {
                 margin-right: auto;
                 flex: 0;
             }
-            @include desktop{
+            @include desktop {
                 margin-left: 0;
             }
         }
 
-        &--search-bar{
+        &--search-bar {
             flex: 1;
 
-            @include tablet{
+            @include tablet {
                 margin-right: 1rem;
                 flex: 0 15rem;
             }
         }
-        
-        &--avatar{
-            @include tablet{
+
+        &--avatar {
+            @include tablet {
                 flex: 0;
                 order: 2;
             }
-            @include desktop{
+            @include desktop {
                 margin-right: 0.75rem;
             }
         }
 
-        &--upload-btn{
+        &--upload-btn {
             flex: 100%;
 
-            @include tablet{
+            @include tablet {
                 margin-right: 0.75rem;
                 flex: 0 9.75rem;
             }
-            
-            @include desktop{
+
+            @include desktop {
                 margin-right: 1.75rem;
                 flex: 0 9.25rem;
             }

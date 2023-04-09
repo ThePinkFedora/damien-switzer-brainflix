@@ -1,6 +1,11 @@
-@use './colors';
+@use "./colors";
 
-@mixin flexbox($justify-content:null,$align-items:null,$direction: null, $wrap:null){
+@mixin flexbox(
+    $justify-content: null,
+    $align-items: null,
+    $direction: null,
+    $wrap: null
+) {
     display: flex;
     justify-content: $justify-content;
     align-items: $align-items;
@@ -8,11 +13,11 @@
     flex-wrap: $wrap;
 }
 
-@mixin divider($side: bottom){
+@mixin divider($side: bottom) {
     border-#{$side}: 1px solid colors.$secondary-gray;
 }
 
 /// 4px rounded corners, which are very common amoungst BrainFlix elements
-@mixin rounded-corners(){
+@mixin rounded-corners() {
     border-radius: 4px;
 }

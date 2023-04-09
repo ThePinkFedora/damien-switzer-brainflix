@@ -12,7 +12,13 @@ function CommentList({ comments }) {
       <ul className="comment-list__list">
         {comments.map((comment) => (
           <li>
-            <CommentCard key={comment.id} avatar={comment.avatar} name={comment.name} comment={comment.comment} timestamp={comment.timestamp} />
+            <CommentCard
+              key={comment.id}
+              avatar={comment.avatar}
+              name={comment.name}
+              comment={comment.comment}
+              timestamp={comment.timestamp}
+            />
           </li>
         ))}
       </ul>

@@ -1,22 +1,22 @@
-@use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/colors';
-@use '../../styles/partials/fonts';
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors";
+@use "../../styles/partials/fonts";
 
-.next-videos{
+.next-videos {
     max-width: 19rem;
-    
-    &__title{
+
+    &__title {
         @include fonts.subheader;
         color: colors.$primary-gray;
         padding-left: 0.25rem;
         margin-bottom: 0.625rem;
 
-        @include tablet-only{
-            margin-bottom: 1.125rem
+        @include tablet-only {
+            margin-bottom: 1.125rem;
         }
     }
 
-    &__list{
+    &__list {
         list-style-type: none;
     }
 }

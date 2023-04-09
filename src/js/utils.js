@@ -9,7 +9,11 @@ const relativeTimeFormat = new Intl.RelativeTimeFormat("en");
  * @returns {string} - The formatted date.
  */
 export function createDateString(date) {
-  return new Date(date).toLocaleDateString("en-US", { month: "2-digit", day: "2-digit", year: "numeric" });
+  return new Date(date).toLocaleDateString("en-US", {
+    month: "2-digit",
+    day: "2-digit",
+    year: "numeric",
+  });
 }
 
 /**
@@ -33,10 +37,12 @@ export function createRelativeTimeString(date) {
   console.log("Date difference: ", difference);
 
   let seconds = difference / 1000;
-  if (seconds < 60) return relativeTimeFormat.format(Math.ceil(-seconds), "second");
+  if (seconds < 60)
+    return relativeTimeFormat.format(Math.ceil(-seconds), "second");
 
   let minutes = seconds / 60;
-  if (minutes < 60) return relativeTimeFormat.format(Math.ceil(-minutes), "minute");
+  if (minutes < 60)
+    return relativeTimeFormat.format(Math.ceil(-minutes), "minute");
 
   let hours = minutes / 60;
   if (hours < 24) return relativeTimeFormat.format(Math.ceil(-hours), "hour");
@@ -48,7 +54,8 @@ export function createRelativeTimeString(date) {
   if (days < 30) return relativeTimeFormat.format(Math.ceil(-weeks), "week");
 
   let months = days / 30;
-  if (months < 12) return relativeTimeFormat.format(Math.ceil(-months), "month");
+  if (months < 12)
+    return relativeTimeFormat.format(Math.ceil(-months), "month");
 
   let years = months / 12;
   return relativeTimeFormat.format(Math.ceil(-years), "year");

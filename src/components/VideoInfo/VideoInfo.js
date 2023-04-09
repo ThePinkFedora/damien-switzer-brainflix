@@ -20,7 +20,10 @@ function VideoInfo({ title, channel, description, views, likes, timestamp }) {
       <h1 className="video-info__title">{title}</h1>
       <div className="video-info__bottom-row">
         <div className="video-info__container video-info__container--left">
-          <a className="video-info__item video-info__item--left video-info__item--strong" href="">
+          <a
+            className="video-info__item video-info__item--left video-info__item--strong"
+            href=""
+          >
             By {channel}
           </a>
           <div className="video-info__item video-info__item--left">

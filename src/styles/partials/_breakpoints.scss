@@ -1,21 +1,21 @@
 $tablet-size: 768px;
 $desktop-size: 1280px;
 
-@mixin tablet{
-    @media (min-width: $tablet-size){
+@mixin tablet {
+    @media (min-width: $tablet-size) {
         @content;
     }
 }
 
 /// Breakpoint which starts at tablet-size but stops at desktop-size
-@mixin tablet-only{
-    @media (min-width: $tablet-size) and (max-width: ($desktop-size - 1px)){
+@mixin tablet-only {
+    @media (min-width: $tablet-size) and (max-width: ($desktop-size - 1px)) {
         @content;
     }
 }
 
-@mixin desktop{
-    @media (min-width: $desktop-size){
+@mixin desktop {
+    @media (min-width: $desktop-size) {
         @content;
     }
 }
