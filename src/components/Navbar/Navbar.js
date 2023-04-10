@@ -24,7 +24,12 @@ function Navbar() {
           <Avatar imageSrc={getUserAvatar()} />
         </div>
         <div className="navbar__container navbar__container--upload-btn">
-          <CtaButton text="UPLOAD" iconSrc={uploadIcon} iconAlt="upload" />
+          <CtaButton
+            text="UPLOAD"
+            iconSrc={uploadIcon}
+            iconAlt="upload"
+            href="/upload"
+          />
         </div>
       </div>
     </header>

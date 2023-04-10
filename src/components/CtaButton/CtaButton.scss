@@ -13,6 +13,7 @@
     width: 100%;
     height: 2.5rem;
     cursor: pointer;
+    @include mixins.flexbox(center, center);
 
     &:hover {
         background-color: colors.$secondary-blue;

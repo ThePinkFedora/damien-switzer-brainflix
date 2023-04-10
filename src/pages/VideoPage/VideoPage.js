@@ -1,19 +1,25 @@
 import "./VideoPage.scss";
 import { useEffect, useState } from "react";
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import VideoInfo from "../VideoInfo/VideoInfo";
-import NextVideos from "../NextVideos/NextVideos";
-import CommentsSection from "../CommentsSection/CommentsSection";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import VideoInfo from "../../components/VideoInfo/VideoInfo";
+import NextVideos from "../../components/NextVideos/NextVideos";
+import CommentsSection from "../../components/CommentsSection/CommentsSection";
 
 import videos from "../../data/videos.json";
 import videoDetails from "../../data/video-details.json";
+import { useParams } from "react-router-dom";
 
 /**
  * Main content section for a viewing a video.
  * Video page includes {@link VideoPlayer}, {@link VideoInfo}, {@link CommentsSection}, and {@link NextVideos}.
  */
 function VideoPage() {
-  const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
+  const paramsObject = useParams();
+  const initialVideo =
+    videoDetails.find((video) => video.id === paramsObject.id) ??
+    videoDetails[0];
+
+  const [currentVideo, setCurrentVideo] = useState(initialVideo);
   const nextVideos = videos.filter((video) => video.id !== currentVideo.id);
 
   //Syncronize page title to include the title of the video.

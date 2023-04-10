@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./CtaButton.scss";
 
 /**
@@ -6,14 +7,23 @@ import "./CtaButton.scss";
  * @param {string} props.text - The button text.
  * @param {string} props.iconSrc - The icon source url.
  * @param {string} props.iconAlt - The icon alt text.
+ * @param {string} [props.href] - The href if this is a {@link Link} button
  * @returns
  */
-function CtaButton({ text, iconSrc, iconAlt }) {
-  return (
-    <button className="cta-button">
+function CtaButton({ text, iconSrc, iconAlt, href }) {
+  const content = (
+    <>
       <img className="cta-button__icon" src={iconSrc} alt={iconAlt} />
       {text}
-    </button>
+    </>
+  );
+
+  return href ? (
+    <Link to={href} className="cta-button">
+      {content}
+    </Link>
+  ) : (
+    <button className="cta-button">{content}</button>
   );
 }
 

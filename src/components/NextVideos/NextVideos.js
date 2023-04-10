@@ -16,6 +16,7 @@ function NextVideos({ videos, onSelect }) {
         {videos.map((video) => (
           <li key={video.id}>
             <VideoCard
+              id={video.id}
               title={video.title}
               channel={video.channel}
               image={video.image}
