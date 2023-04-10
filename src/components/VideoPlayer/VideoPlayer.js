@@ -6,9 +6,10 @@ import "./VideoPlayer.scss";
  * @param {string} props.videoSrc - The source url of the video.
  * @param {string} props.posterSrc - The source url of the poster image.
  */
-function VideoPlayer({ videoSrc, posterSrc }) {
+function VideoPlayer({ video }) {
   //We will leave this empty until the endpoint is ready
   const videoSource = ""; //videoSrc;
+  const posterSrc = video?.image;
 
   return (
     <section className="video-player">

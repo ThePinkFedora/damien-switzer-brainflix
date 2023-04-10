@@ -13,31 +13,33 @@ import TimestampLabel from "../Timestamp/TimestampLabel";
  * @param {number|string} props.likes - The number of likes.
  * @param {number} props.timestamp - The date posted (in millis).
  */
-function VideoInfo({ title, channel, description, views, likes, timestamp }) {
+function VideoInfo({ video }) {
+  // title, channel, description, views, likes, timestamp
+
   return (
     <section className="video-info">
-      <h1 className="video-info__title">{title}</h1>
+      <h1 className="video-info__title">{video?.title ?? "Loading..."}</h1>
       <div className="video-info__bottom-row">
         <div className="video-info__container video-info__container--left">
           <span className="video-info__item video-info__item--left video-info__item--strong">
-            By {channel}
+            {video ? `By ${video.channel}` : "Loading..."}
           </span>
           <div className="video-info__item video-info__item--left video-info__item--soft">
-            <TimestampLabel timestamp={timestamp} />
+            {video && <TimestampLabel timestamp={video.timestamp} />}
           </div>
         </div>
         <div className="video-info__container video-info__container--right">
           <div className="video-info__item video-info__item--right video-info__item--soft">
             <img className="video-info__icon" src={viewsIcon} alt="views" />
-            {views}
+            {video?.views ?? 0}
           </div>
           <div className="video-info__item video-info__item--right video-info__item--soft">
             <img className="video-info__icon" src={likesIcon} alt="likes" />
-            {likes}
+            {video?.likes ?? 0}
           </div>
         </div>
       </div>
-      <p className="video-info__description">{description}</p>
+      <p className="video-info__description">{video?.description}</p>
     </section>
   );
 }

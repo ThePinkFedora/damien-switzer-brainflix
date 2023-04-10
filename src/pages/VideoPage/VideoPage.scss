@@ -39,6 +39,7 @@
         }
 
         &--video-details {
+            width: 100%;
             @include desktop {
                 @include mixins.divider(right);
                 max-width: 68.1%;
