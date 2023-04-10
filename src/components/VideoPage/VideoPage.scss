@@ -8,7 +8,11 @@
     padding: 0 1rem 1rem;
 
     @include tablet {
-        padding: 0 2.25rem 0 2.25rem;
+        padding: 0 2.25rem 1.25rem 2.25rem;
+    }
+
+    @include desktop {
+        padding-bottom: 0;
     }
 
     &__content {
