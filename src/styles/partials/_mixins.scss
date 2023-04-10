@@ -13,6 +13,8 @@
     flex-wrap: $wrap;
 }
 
+/// Standard BrainFlix divider
+/// @param {type} $side [bottom] - The border side for the divider
 @mixin divider($side: bottom) {
     border-#{$side}: 1px solid colors.$secondary-gray;
 }

@@ -8,7 +8,6 @@ import commentIcon from "../../assets/images/add-comment.svg";
  * Form posting new comments.
  * @param {object} props
  * @param {(comment: string) => {}} props.onComment - The callback for posting a comment.
- * @returns
  */
 function CommentForm({ onComment }) {
   /**

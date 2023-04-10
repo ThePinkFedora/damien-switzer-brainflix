@@ -42,7 +42,7 @@ function VideoPage() {
         posterSrc={currentVideo.image}
         videoSrc={currentVideo.video}
       />
-      <div className="bottom-section">
+      <section className="bottom-section">
         <div className="bottom-section__content">
           <div className="bottom-section__container bottom-section__container--video-details">
             <VideoInfo
@@ -62,7 +62,7 @@ function VideoPage() {
             <NextVideos videos={nextVideos} onSelect={selectVideo} />
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

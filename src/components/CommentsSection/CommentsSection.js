@@ -10,9 +10,13 @@ import CommentList from "../CommentList/CommentList";
  * @returns
  */
 function CommentsSection({ comments, onComment }) {
+  const countText = `${comments.length} Comment${
+    comments.length !== 1 ? "s" : ""
+  }`;
+
   return (
     <section className="comments-section">
-      <h4 className="comments-section__count">{comments.length} Comments</h4>
+      <h2 className="comments-section__header">{countText}</h2>
       <CommentForm onComment={onComment} />
       <CommentList comments={comments} />
     </section>

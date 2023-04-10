@@ -11,9 +11,8 @@ function CommentList({ comments }) {
     <section className="comment-list">
       <ul className="comment-list__list">
         {comments.map((comment) => (
-          <li>
+          <li className="comment-list__item" key={comment.id}>
             <CommentCard
-              key={comment.id}
               avatar={comment.avatar}
               name={comment.name}
               comment={comment.comment}

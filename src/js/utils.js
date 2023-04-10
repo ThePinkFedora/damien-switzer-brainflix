@@ -34,8 +34,6 @@ export function createRelativeTimeString(date) {
   let now = new Date();
   let difference = now - date; //In milliseconds
 
-  console.log("Date difference: ", difference);
-
   let seconds = difference / 1000;
   if (seconds < 60)
     return relativeTimeFormat.format(Math.ceil(-seconds), "second");

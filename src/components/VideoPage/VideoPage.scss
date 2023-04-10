@@ -5,17 +5,17 @@
 @use "../../styles/partials/units";
 
 .bottom-section {
-    padding: 0 1rem 0rem;
+    padding: 0 1rem 1rem;
 
     @include tablet {
         padding: 0 2.25rem 0 2.25rem;
     }
 
     &__content {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: units.$max-width;
         margin: auto;
+
+        max-width: units.$max-width;
+        @include mixins.flexbox($wrap: wrap);
 
         @include desktop {
             flex-wrap: nowrap;
@@ -24,11 +24,9 @@
 
     &__container {
         padding-top: 1rem;
-        padding-bottom: 1rem;
 
         @include tablet {
             padding-top: 1.5rem;
-            padding-bottom: 2.25rem;
         }
 
         @include desktop {
@@ -44,8 +42,13 @@
         }
 
         &--next-videos {
+            @include mixins.divider(top);
+            width: 100%;
+
             @include desktop {
+                border: none;
                 padding-left: 1.1875rem;
+                width: auto;
             }
         }
     }

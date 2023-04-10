@@ -11,12 +11,11 @@ import VideoCard from "../VideoCard/VideoCard";
 function NextVideos({ videos, onSelect }) {
   return (
     <aside className="next-videos">
-      <h3 className="next-videos__title">NEXT VIDEOS</h3>
+      <h2 className="next-videos__title">NEXT VIDEOS</h2>
       <ul className="next-videos__list">
         {videos.map((video) => (
-          <li>
+          <li key={video.id}>
             <VideoCard
-              key={video.id}
               title={video.title}
               channel={video.channel}
               image={video.image}

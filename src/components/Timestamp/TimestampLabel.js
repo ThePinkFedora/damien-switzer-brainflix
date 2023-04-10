@@ -13,7 +13,7 @@ import {
 function TimestampLabel({ timestamp }) {
   return (
     <span className="timestamp-label">
-      <time datetime={createDateTimeString(timestamp)}>
+      <time dateTime={createDateTimeString(timestamp)}>
         {createRelativeTimeString(timestamp)}
       </time>
       <span className="timestamp-label__tooltip">
