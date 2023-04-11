@@ -17,7 +17,6 @@
 
     &__content {
         margin: auto;
-
         max-width: units.$max-width;
         @include mixins.flexbox($wrap: wrap);
 

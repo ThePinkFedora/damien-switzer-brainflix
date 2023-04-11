@@ -10,20 +10,26 @@ import "./CtaButton.scss";
  * @param {string} [props.href] - The href if this is a {@link Link} button
  * @returns
  */
-function CtaButton({ text, iconSrc, iconAlt, href }) {
+function CtaButton({ text, iconSrc, iconAlt, href, style = "primary" }) {
   const content = (
     <>
-      <img className="cta-button__icon" src={iconSrc} alt={iconAlt} />
+      {iconSrc && (
+        <img className="cta-button__icon" src={iconSrc} alt={iconAlt} />
+      )}
       {text}
     </>
   );
 
+  const className = `cta-button ${
+    style === "primary" ? "cta-button--primary" : "cta-button--secondary"
+  }`;
+
   return href ? (
-    <Link to={href} className="cta-button">
+    <Link to={href} className={className}>
       {content}
     </Link>
   ) : (
-    <button className="cta-button">{content}</button>
+    <button className={className}>{content}</button>
   );
 }
 

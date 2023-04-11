@@ -23,3 +23,23 @@
 @mixin rounded-corners() {
     border-radius: 4px;
 }
+
+/// New / Testing
+@mixin form-field() {
+    background-color: colors.$secondary-white;
+    border: 1px solid colors.$secondary-gray;
+    @include rounded-corners();
+
+    &:focus {
+        border-color: colors.$primary-blue;
+        outline: none; //Chrome adds a thick outline by default
+    }
+
+    &::placeholder {
+        color: colors.$primary-black;
+    }
+
+    &--invalid {
+        border-color: colors.$error-color;
+    }
+}

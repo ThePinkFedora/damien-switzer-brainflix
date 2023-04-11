@@ -15,10 +15,6 @@
     cursor: pointer;
     @include mixins.flexbox(center, center);
 
-    &:hover {
-        background-color: colors.$secondary-blue;
-    }
-
     &__icon {
         margin: auto;
         position: absolute;
@@ -27,5 +23,22 @@
         left: 0.5rem;
         width: 1.25rem;
         height: 1.25rem;
+    }
+
+    &--primary {
+        color: colors.$primary-white;
+        background-color: colors.$primary-blue;
+
+        &:hover {
+            background-color: colors.$secondary-blue;
+        }
+    }
+    &--secondary {
+        color: colors.$primary-blue;
+        background-color: colors.$primary-white;
+
+        &:hover {
+            background-color: colors.$secondary-gray;
+        }
     }
 }

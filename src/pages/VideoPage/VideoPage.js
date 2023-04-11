@@ -15,7 +15,7 @@ function VideoPage() {
   const { id: videoIdParam } = useParams();
 
   const [sideVideos, setSideVideos] = useState([]);
-  const [currentVideo, setCurrentVideo] = useState();
+  const [currentVideo, setCurrentVideo] = useState(null);
 
   let videoId =
     videoIdParam ?? (sideVideos.length > 0 ? sideVideos[0].id : null);
@@ -37,11 +37,14 @@ function VideoPage() {
     }
   }, [videoId]);
 
-  //Whenever currentVideo changes: Syncronize page title to include the title of the video.
-  useEffect(() => {
-    console.log("update title effect");
-    document.title = `BrainFlix: ${currentVideo?.title ?? "Loading"}`;
-  }, [currentVideo]);
+  // * We're gonna simplify by removing this useEffect
+  // //Whenever currentVideo changes: Syncronize page title to include the title of the video.
+  // useEffect(() => {
+  //   console.log("update title effect");
+  //   document.title = `BrainFlix: ${currentVideo?.title ?? "Loading"}`;
+  // }, [currentVideo]);
+
+  document.title = `BrainFlix: ${currentVideo?.title ?? "Loading"}`;
 
   /**
    * Posts a comment on the current video. (Not implemented)
