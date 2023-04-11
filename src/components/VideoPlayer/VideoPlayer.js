@@ -1,4 +1,5 @@
 import "./VideoPlayer.scss";
+import { appendApiKey } from "../../js/apiUtils";
 
 /**
  * Section which display the current video.
@@ -6,10 +7,9 @@ import "./VideoPlayer.scss";
  * @param {string} props.videoSrc - The source url of the video.
  * @param {string} props.posterSrc - The source url of the poster image.
  */
-function VideoPlayer({ video }) {
+function VideoPlayer({ videoSrc, posterSrc }) {
   //We will leave this empty until the endpoint is ready
-  const videoSource = ""; //videoSrc;
-  const posterSrc = video?.image;
+  const videoSource = appendApiKey(videoSrc); //""; //videoSrc;
 
   return (
     <section className="video-player">

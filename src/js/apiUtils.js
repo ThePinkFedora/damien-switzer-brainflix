@@ -5,12 +5,14 @@ const config = {
   delay: 500,
 };
 
+export const appendApiKey = (url = "") => url + "?api_key=" + config.apiKey;
+
 export function getVideos() {
   return new Promise(async (resolve, reject) => {
     await new Promise((resolve) => setTimeout(resolve, config.delay));
 
     axios
-      .get(`${config.endpoint}videos?api_key=${config.apiKey}`)
+      .get(`${config.endpoint}videos${appendApiKey()}`)
       .then((response) => resolve(response.data));
   });
 }
@@ -20,7 +22,9 @@ export function getVideoDetails(videoId) {
     await new Promise((resolve) => setTimeout(resolve, config.delay));
 
     axios
-      .get(`${config.endpoint}videos/${videoId}?api_key=${config.apiKey}`)
+      .get(`${config.endpoint}videos/${videoId}${appendApiKey()}`)
       .then((response) => resolve(response.data));
   });
 }
+
+export const { apiKey } = config;

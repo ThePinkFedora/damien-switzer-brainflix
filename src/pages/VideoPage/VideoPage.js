@@ -1,6 +1,6 @@
 import "./VideoPage.scss";
 import { useEffect, useState } from "react";
-import { getVideos, getVideoDetails } from "../../js/videoApi";
+import { getVideos, getVideoDetails } from "../../js/apiUtils";
 import { useParams } from "react-router-dom";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
@@ -52,21 +52,19 @@ function VideoPage() {
   return (
     <main className="video-page">
       <VideoPlayer
-        video={currentVideo}
-        // posterSrc={currentVideo.image}
-        // videoSrc={currentVideo.video}
+        posterSrc={currentVideo?.image}
+        videoSrc={currentVideo?.video}
       />
       <section className="bottom-section">
         <div className="bottom-section__content">
           <div className="bottom-section__container bottom-section__container--video-details">
             <VideoInfo
-              video={currentVideo}
-              // title={currentVideo.title}
-              // channel={currentVideo.channel}
-              // description={currentVideo.description}
-              // views={currentVideo.views}
-              // likes={currentVideo.likes}
-              // timestamp={currentVideo.timestamp}
+              title={currentVideo?.title}
+              channel={currentVideo?.channel}
+              description={currentVideo?.description}
+              views={currentVideo?.views}
+              likes={currentVideo?.likes}
+              timestamp={currentVideo?.timestamp}
             />
             <CommentsSection
               comments={currentVideo?.comments ?? []}
