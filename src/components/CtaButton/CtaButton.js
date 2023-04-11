@@ -10,7 +10,14 @@ import "./CtaButton.scss";
  * @param {string} [props.href] - The href if this is a {@link Link} button
  * @returns
  */
-function CtaButton({ text, iconSrc, iconAlt, href, style = "primary" }) {
+function CtaButton({
+  text,
+  iconSrc,
+  iconAlt,
+  href,
+  onClick,
+  style = "primary",
+}) {
   const content = (
     <>
       {iconSrc && (
@@ -29,7 +36,9 @@ function CtaButton({ text, iconSrc, iconAlt, href, style = "primary" }) {
       {content}
     </Link>
   ) : (
-    <button className={className}>{content}</button>
+    <button className={className} onClick={onClick}>
+      {content}
+    </button>
   );
 }
 
