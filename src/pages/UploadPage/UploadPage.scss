@@ -12,6 +12,15 @@
         padding: 0 2.25rem 1.25rem 2.25rem;
     }
 
+    &__content {
+        margin: auto;
+        max-width: units.$max-width;
+
+        @include desktop {
+            flex-wrap: nowrap;
+        }
+    }
+
     &__title {
         @include fonts.pageheader;
         margin: 1.5rem 0 1rem;
@@ -21,12 +30,16 @@
         }
     }
 
-    &__content {
-        margin: auto;
-        max-width: units.$max-width;
+    &__success-container {
+        text-align: center;
+    }
 
-        @include desktop {
-            flex-wrap: nowrap;
-        }
+    &__success-image {
+        margin: 2rem;
+        width: 20rem;
+    }
+
+    &__success-message {
+        margin: 2rem;
     }
 }

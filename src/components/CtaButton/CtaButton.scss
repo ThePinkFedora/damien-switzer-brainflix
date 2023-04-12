@@ -32,6 +32,11 @@
         &:hover {
             background-color: colors.$secondary-blue;
         }
+
+        &:disabled {
+            background-color: colors.$primary-gray;
+            cursor: default;
+        }
     }
     &--secondary {
         color: colors.$primary-blue;

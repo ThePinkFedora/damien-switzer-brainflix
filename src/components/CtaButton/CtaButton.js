@@ -17,6 +17,7 @@ function CtaButton({
   href,
   onClick,
   style = "primary",
+  disabled,
 }) {
   const content = (
     <>
@@ -36,7 +37,7 @@ function CtaButton({
       {content}
     </Link>
   ) : (
-    <button className={className} onClick={onClick}>
+    <button className={className} onClick={onClick} disabled={disabled}>
       {content}
     </button>
   );
