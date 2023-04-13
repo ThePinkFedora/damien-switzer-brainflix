@@ -22,7 +22,6 @@ function VideoPage() {
 
   //When this component initializes: Retrieve sideVideos array
   useEffect(() => {
-    console.log("Retrieve side videos effect");
     getVideos()
       .then(setSideVideos)
       .catch((error) => setError("Failed to load videos"));
@@ -30,7 +29,8 @@ function VideoPage() {
 
   //Whenever videoId changes: Retrieve the video
   useEffect(() => {
-    console.log("Retrieve current video effect");
+    //Clear error state
+    setError(null);
     //Clear any current video
     setCurrentVideo(null);
     //If videoId is assigned, load the video
@@ -41,7 +41,7 @@ function VideoPage() {
     }
   }, [videoId]);
 
-  document.title = `BrainFlix: ${currentVideo?.title ?? "Loading"}`;
+  document.title = `BrainFlix: ${currentVideo?.title ?? error ?? "Loading..."}`;
 
   /**
    * Handles reload after a comment has been posted.
@@ -49,43 +49,47 @@ function VideoPage() {
   const handleCommented = () =>
     getVideoDetails(videoId).then((video) => setCurrentVideo(video));
 
-  // If we have error or we're still loading, display the appropriate status message.
-  if (error || !sideVideos) {
-    return (
-      <div className="video-page__status-message">{error || "Loading..."}</div>
-    );
-  }
-
   return (
     <main className="video-page">
-      <VideoPlayer
-        posterSrc={currentVideo?.image}
-        videoSrc={currentVideo?.video}
-      />
-      <section className="bottom-section">
-        <div className="bottom-section__content">
-          <div className="bottom-section__container bottom-section__container--video-details">
-            <VideoInfo
-              title={currentVideo?.title}
-              channel={currentVideo?.channel}
-              description={currentVideo?.description}
-              views={currentVideo?.views}
-              likes={currentVideo?.likes}
-              timestamp={currentVideo?.timestamp}
+      {
+        // If we have error or we're still loading, display the appropriate status message.
+        error || !sideVideos ? (
+          <div className="video-page__status-message">
+            {error || "Loading..."}
+          </div>
+        ) : (
+          <>
+            <VideoPlayer
+              posterSrc={currentVideo?.image}
+              videoSrc={currentVideo?.video}
             />
-            {currentVideo !== null && (
-              <CommentsSection
-                comments={currentVideo.comments}
-                videoId={videoId}
-                onCommented={handleCommented}
-              />
-            )}
-          </div>
-          <div className="bottom-section__container bottom-section__container--next-videos">
-            <NextVideos videos={sideVideos} currentId={videoId} />
-          </div>
-        </div>
-      </section>
+            <section className="bottom-section">
+              <div className="bottom-section__content">
+                <div className="bottom-section__container bottom-section__container--video-details">
+                  <VideoInfo
+                    title={currentVideo?.title}
+                    channel={currentVideo?.channel}
+                    description={currentVideo?.description}
+                    views={currentVideo?.views}
+                    likes={currentVideo?.likes}
+                    timestamp={currentVideo?.timestamp}
+                  />
+                  {currentVideo !== null && (
+                    <CommentsSection
+                      comments={currentVideo.comments}
+                      videoId={videoId}
+                      onCommented={handleCommented}
+                    />
+                  )}
+                </div>
+                <div className="bottom-section__container bottom-section__container--next-videos">
+                  <NextVideos videos={sideVideos} currentId={videoId} />
+                </div>
+              </div>
+            </section>
+          </>
+        )
+      }
     </main>
   );
 }
