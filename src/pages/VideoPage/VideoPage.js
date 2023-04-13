@@ -14,16 +14,18 @@ import CommentsSection from "../../components/CommentsSection/CommentsSection";
 function VideoPage() {
   const { id: videoIdParam } = useParams();
 
-  const [sideVideos, setSideVideos] = useState([]);
+  const [sideVideos, setSideVideos] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(null);
+  const [error, setError] = useState(null);
 
-  let videoId =
-    videoIdParam ?? (sideVideos.length > 0 ? sideVideos[0].id : null);
+  let videoId = videoIdParam ?? sideVideos?.[0].id;
 
   //When this component initializes: Retrieve sideVideos array
   useEffect(() => {
     console.log("Retrieve side videos effect");
-    getVideos().then(setSideVideos);
+    getVideos()
+      .then(setSideVideos)
+      .catch((error) => setError("Failed to load videos"));
   }, []);
 
   //Whenever videoId changes: Retrieve the video
@@ -33,27 +35,26 @@ function VideoPage() {
     setCurrentVideo(null);
     //If videoId is assigned, load the video
     if (videoId) {
-      getVideoDetails(videoId).then((video) => setCurrentVideo(video));
+      getVideoDetails(videoId)
+        .then((video) => setCurrentVideo(video))
+        .catch((error) => setError("This video isn't available"));
     }
   }, [videoId]);
-
-  // * We're gonna simplify by removing this useEffect
-  // //Whenever currentVideo changes: Syncronize page title to include the title of the video.
-  // useEffect(() => {
-  //   console.log("update title effect");
-  //   document.title = `BrainFlix: ${currentVideo?.title ?? "Loading"}`;
-  // }, [currentVideo]);
 
   document.title = `BrainFlix: ${currentVideo?.title ?? "Loading"}`;
 
   /**
-   * Posts a comment on the current video. (Not implemented)
-   * @param {string} comment - The comment to be posted.
+   * Handles reload after a comment has been posted.
    */
-  const handleCommented = () => {
-    ///Reload
+  const handleCommented = () =>
     getVideoDetails(videoId).then((video) => setCurrentVideo(video));
-  };
+
+  // If we have error or we're still loading, display the appropriate status message.
+  if (error || !sideVideos) {
+    return (
+      <div className="video-page__status-message">{error || "Loading..."}</div>
+    );
+  }
 
   return (
     <main className="video-page">

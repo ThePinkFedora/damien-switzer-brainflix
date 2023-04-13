@@ -11,9 +11,8 @@ function App() {
       <div className="app">
         <Navbar />
         <Routes>
-          <Route path="/">
-            <Route path=":id?" element={<VideoPage />} />
-          </Route>
+          <Route path="/" element={<VideoPage />} />
+          <Route path=":id" element={<VideoPage />} />
           <Route path="upload" element={<UploadPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -10,6 +10,12 @@
     @include tablet {
         padding-top: 0;
     }
+
+    &__status-message {
+        @include fonts.sectionheader;
+        text-align: center;
+        margin: 20vh auto 0;
+    }
 }
 
 .bottom-section {
@@ -65,3 +71,28 @@
         }
     }
 }
+
+// .video-page-loading {
+//     @include fonts.sectionheader;
+//     text-align: center;
+//     padding: 4rem;
+//     // padding: 0 1rem 1rem;
+
+//     // @include tablet {
+//     //     padding: 0 2.25rem 1.25rem 2.25rem;
+//     // }
+
+//     // @include desktop {
+//     //     padding-bottom: 0;
+//     // }
+
+//     // &__content {
+//     //     margin: auto;
+//     //     max-width: units.$max-width;
+//     //     @include mixins.flexbox($wrap: wrap);
+
+//     //     @include desktop {
+//     //         flex-wrap: nowrap;
+//     //     }
+//     // }
+// }
