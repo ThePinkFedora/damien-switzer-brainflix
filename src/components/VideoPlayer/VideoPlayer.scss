@@ -5,7 +5,6 @@
 .video-player {
     background-color: colors.$secondary-black;
     @include mixins.flexbox(center);
-    overflow-x: hidden;
 
     @include tablet {
         padding-left: 2.25rem;
