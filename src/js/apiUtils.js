@@ -27,4 +27,17 @@ export function getVideoDetails(videoId) {
   });
 }
 
+export function postComment(videoId, comment) {
+  return new Promise(async (resolve, reject) => {
+    await new Promise((resolve) => setTimeout(resolve, config.delay));
+
+    axios
+      .post(
+        `${config.endpoint}videos/${videoId}/comments${appendApiKey()}`,
+        comment
+      )
+      .then((response) => resolve(response.data));
+  });
+}
+
 export const { apiKey } = config;

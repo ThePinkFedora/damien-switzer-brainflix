@@ -30,7 +30,7 @@ function VideoPage() {
   useEffect(() => {
     console.log("Retrieve current video effect");
     //Clear any current video
-    setCurrentVideo();
+    setCurrentVideo(null);
     //If videoId is assigned, load the video
     if (videoId) {
       getVideoDetails(videoId).then((video) => setCurrentVideo(video));
@@ -50,7 +50,10 @@ function VideoPage() {
    * Posts a comment on the current video. (Not implemented)
    * @param {string} comment - The comment to be posted.
    */
-  const postComment = (comment) => {};
+  const handleCommented = () => {
+    ///Reload
+    getVideoDetails(videoId).then((video) => setCurrentVideo(video));
+  };
 
   return (
     <main className="video-page">
@@ -69,10 +72,13 @@ function VideoPage() {
               likes={currentVideo?.likes}
               timestamp={currentVideo?.timestamp}
             />
-            <CommentsSection
-              comments={currentVideo?.comments ?? []}
-              onComment={postComment}
-            />
+            {currentVideo !== null && (
+              <CommentsSection
+                comments={currentVideo.comments}
+                videoId={videoId}
+                onCommented={handleCommented}
+              />
+            )}
           </div>
           <div className="bottom-section__container bottom-section__container--next-videos">
             <NextVideos videos={sideVideos} currentId={videoId} />
