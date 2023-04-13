@@ -4,6 +4,14 @@
 @use "../../styles/partials/mixins";
 @use "../../styles/partials/units";
 
+.video-page {
+    padding-top: 0.25rem;
+
+    @include tablet {
+        padding-top: 0;
+    }
+}
+
 .bottom-section {
     padding: 0 1rem 1rem;
 

@@ -13,18 +13,8 @@
     }
 
     &__video {
-        background-color: colors.$primary-black;
-        margin: auto;
-        max-width: 102%;
-        display: block;
-
-        @include tablet {
-            max-width: 52.5rem;
-            height: 24.625rem;
-        }
-
-        @include desktop {
-            height: 30rem;
-        }
+        width: 100%;
+        max-width: 52.875rem;
+        aspect-ratio: 16/9;
     }
 }
