@@ -1,7 +1,7 @@
 import "./VideoInfo.scss";
 import viewsIcon from "../../assets/images/views.svg";
 import likesIcon from "../../assets/images/likes.svg";
-import TimestampLabel from "../Timestamp/TimestampLabel";
+import TimestampLabel from "../TimestampLabel/TimestampLabel";
 
 /**
  * Section which display information related to the current video.

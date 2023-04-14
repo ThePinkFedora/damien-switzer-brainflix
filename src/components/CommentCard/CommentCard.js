@@ -1,6 +1,6 @@
 import "./CommentCard.scss";
 import Avatar from "../Avatar/Avatar";
-import TimestampLabel from "../Timestamp/TimestampLabel";
+import TimestampLabel from "../TimestampLabel/TimestampLabel";
 
 /**
  * A card element which displays a comment.
