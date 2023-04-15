@@ -14,16 +14,16 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar__content">
-        <div className="navbar__container navbar__container--logo">
+        <div className="navbar__logo-container">
           <Logo />
         </div>
-        <div className="navbar__container navbar__container--search-bar">
+        <div className="navbar__search-container">
           <SearchBar />
         </div>
-        <div className="navbar__container navbar__container--avatar">
+        <div className="navbar__avatar-container">
           <Avatar imageSrc={getUserAvatar()} />
         </div>
-        <div className="navbar__container navbar__container--upload-btn">
+        <div className="navbar__upload-container">
           <CtaButton
             text="UPLOAD"
             iconSrc={uploadIcon}

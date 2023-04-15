@@ -12,10 +12,10 @@ import TimestampLabel from "../TimestampLabel/TimestampLabel";
 function CommentCard({ name, comment, timestamp }) {
   return (
     <article className="comment-card">
-      <div className="comment-card__container comment-card__container--avatar">
+      <div className="comment-card__avatar-container">
         <Avatar imageSrc="" />
       </div>
-      <div className="comment-card__container comment-card__container--content">
+      <div className="comment-card__content-container">
         <h4 className="comment-card__name">{name}</h4>
         <TimestampLabel timestamp={timestamp} />
         <p className="comment-card__text">{comment}</p>

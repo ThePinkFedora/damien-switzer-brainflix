@@ -16,32 +16,30 @@
         padding: 0 1.5rem 1.5rem 0.625rem;
     }
 
-    &__container {
-        &--avatar {
-            padding: 1.5rem 1rem 0 0;
+    &__avatar-container {
+        padding: 1.5rem 1rem 0 0;
 
-            @include desktop {
-                padding: 1.5rem 2.25rem 0 0;
-            }
+        @include desktop {
+            padding: 1.5rem 2.25rem 0 0;
+        }
+    }
+
+    &__commentbox-container {
+        padding: 0 0 1rem;
+
+        @include tablet {
+            padding: 0 1.5rem 0 0;
+            flex: 1;
+        }
+    }
+
+    &__submit-container {
+        @include tablet {
+            flex: 0 0 9.75rem;
         }
 
-        &--commentbox {
-            padding: 0 0 1rem;
-
-            @include tablet {
-                padding: 0 1.5rem 0 0;
-                flex: 1;
-            }
-        }
-
-        &--submit {
-            @include tablet {
-                flex: 0 0 9.75rem;
-            }
-
-            @include desktop {
-                flex: 0 0 9.25rem;
-            }
+        @include desktop {
+            flex: 0 0 9.25rem;
         }
     }
 

@@ -34,7 +34,7 @@ function UploadForm({ onUpload, onCancel }) {
 
   return (
     <form className="upload-form" ref={formRef}>
-      <div className="upload-form__row upload-form__row--thumbnail">
+      <div className="upload-form__thumbnail-row">
         <label className="upload-form__label" htmlFor="thumbnail">
           VIDEO THUMBNAIL
         </label>
@@ -46,7 +46,7 @@ function UploadForm({ onUpload, onCancel }) {
           name="thumbnail"
         />
       </div>
-      <div className="upload-form__row upload-form__row--fields">
+      <div className="upload-form__fields-row">
         <label className="upload-form__label" htmlFor="title">
           TITLE YOUR VIDEO
         </label>
@@ -71,8 +71,8 @@ function UploadForm({ onUpload, onCancel }) {
           onChange={handleChange}
         />
       </div>
-      <div className="upload-form__row upload-form__row--buttons">
-        <div className="upload-form__container upload-form__container--button">
+      <div className="upload-form__buttons-row">
+        <div className="upload-form__button-container">
           <CtaButton
             text="PUBLISH"
             iconSrc={uploadIcon}
@@ -81,7 +81,7 @@ function UploadForm({ onUpload, onCancel }) {
             onClick={handleSubmit}
           />
         </div>
-        <div className="upload-form__container upload-form__container--button">
+        <div className="upload-form__button-container">
           <CtaButton text="CANCEL" style="secondary" onClick={onCancel} />
         </div>
       </div>

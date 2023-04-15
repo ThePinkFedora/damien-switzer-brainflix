@@ -31,6 +31,7 @@
         &--buttons {
             gap: 1.5rem;
             margin-top: 0.25rem;
+
             @include tablet {
                 @include mixins.divider(top);
                 padding: 1.5rem 0;
@@ -43,14 +44,45 @@
         }
     }
 
-    &__container {
-        &--button {
-            @include tablet {
-                width: 9.75rem;
-            }
-            @include desktop {
-                width: 9.25rem;
-            }
+    &__thumbnail-row {
+        @include mixins.flexbox($direction: column);
+        width: 100%;
+        max-width: 20.25rem;
+    }
+
+    &__fields-row {
+        @include mixins.flexbox($direction: column);
+        width: 100%;
+
+        @include desktop {
+            flex: 41.875rem;
+        }
+    }
+
+    &__buttons-row {
+        @include mixins.flexbox($direction: column);
+        width: 100%;
+
+        gap: 1.5rem;
+        margin-top: 0.25rem;
+
+        @include tablet {
+            @include mixins.divider(top);
+            padding: 1.5rem 0;
+            flex-direction: row-reverse;
+        }
+
+        @include desktop {
+            margin-top: 0.5rem;
+        }
+    }
+
+    &__button-container {
+        @include tablet {
+            width: 9.75rem;
+        }
+        @include desktop {
+            width: 9.25rem;
         }
     }
 

@@ -18,24 +18,21 @@
         padding-right: 1.5rem;
     }
 
-    //Containers wrap elements to control spacing and size constraints.
-    &__container {
-        &--avatar {
-            padding-right: 1rem;
+    &__avatar-container {
+        padding-right: 1rem;
 
-            @include tablet {
-                padding-right: 1.25rem;
-            }
-
-            @include desktop {
-                padding-right: 2.25rem;
-            }
+        @include tablet {
+            padding-right: 1.25rem;
         }
 
-        &--content {
-            flex-grow: 1;
-            @include mixins.flexbox($wrap: wrap);
+        @include desktop {
+            padding-right: 2.25rem;
         }
+    }
+
+    &__content-container {
+        flex-grow: 1;
+        @include mixins.flexbox($wrap: wrap);
     }
 
     &__name {

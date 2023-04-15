@@ -31,11 +31,11 @@ function CommentForm({ onComment }) {
 
   return (
     <div className="comment-form">
-      <div className="comment-form__container comment-form__container--avatar">
+      <div className="comment-form__avatar-container">
         <Avatar imageSrc={getUserAvatar()} />
       </div>
       <form className="comment-form__form" onSubmit={handleSubmit}>
-        <div className="comment-form__container comment-form__container--commentbox">
+        <div className="comment-form__commentbox-container">
           <label className="comment-form__label" htmlFor="commentBox">
             JOIN THE CONVERSATION
           </label>
@@ -46,7 +46,7 @@ function CommentForm({ onComment }) {
             placeholder="Add a new comment"
           ></textarea>
         </div>
-        <div className="comment-form__container comment-form__container--submit">
+        <div className="comment-form__submit-container">
           <CtaButton text="COMMENT" iconSrc={commentIcon} iconAlt="comment" />
         </div>
       </form>
