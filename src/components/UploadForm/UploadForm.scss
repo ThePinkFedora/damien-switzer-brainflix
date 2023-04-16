@@ -13,37 +13,6 @@
         padding-top: 1.5rem;
     }
 
-    &__row {
-        @include mixins.flexbox($direction: column);
-        width: 100%;
-
-        &--thumbnail {
-            max-width: 20.25rem;
-        }
-
-        &--fields {
-            flex: 100%;
-            @include desktop {
-                flex: 41.875rem;
-            }
-        }
-
-        &--buttons {
-            gap: 1.5rem;
-            margin-top: 0.25rem;
-
-            @include tablet {
-                @include mixins.divider(top);
-                padding: 1.5rem 0;
-                flex-direction: row-reverse;
-            }
-
-            @include desktop {
-                margin-top: 0.5rem;
-            }
-        }
-    }
-
     &__thumbnail-row {
         @include mixins.flexbox($direction: column);
         width: 100%;

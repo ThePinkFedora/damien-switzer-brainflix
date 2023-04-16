@@ -65,7 +65,7 @@ function VideoPage() {
             />
             <section className="bottom-section">
               <div className="bottom-section__content">
-                <div className="bottom-section__container bottom-section__container--video-details">
+                <div className="bottom-section__video-details-container">
                   <VideoInfo
                     title={currentVideo?.title}
                     channel={currentVideo?.channel}
@@ -82,7 +82,7 @@ function VideoPage() {
                     />
                   )}
                 </div>
-                <div className="bottom-section__container bottom-section__container--next-videos">
+                <div className="bottom-section__next-videos-container">
                   <NextVideos videos={sideVideos} currentId={videoId} />
                 </div>
               </div>

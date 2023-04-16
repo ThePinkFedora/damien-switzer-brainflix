@@ -13,7 +13,7 @@ function NotFound() {
         <p className="not-found__text">
           The requested URL {location.pathname} was not found on this server.
         </p>
-        <div className="not-found__container not-found__container--home-button">
+        <div className="not-found__home-button-container">
           <CtaButton text="TAKE ME HOME" href="/" />
         </div>
       </div>

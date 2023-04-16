@@ -39,8 +39,9 @@
         }
     }
 
-    &__container {
+    &__video-details-container {
         padding-top: 1rem;
+        width: 100%;
 
         @include tablet {
             padding-top: 1.5rem;
@@ -49,25 +50,26 @@
         @include desktop {
             padding-top: 1.875rem;
             padding-bottom: 4rem;
+            @include mixins.divider(right);
+            max-width: 68.1%;
+        }
+    }
+
+    &__next-videos-container {
+        padding-top: 1rem;
+        @include mixins.divider(top);
+        width: 100%;
+
+        @include tablet {
+            padding-top: 1.5rem;
         }
 
-        &--video-details {
-            width: 100%;
-            @include desktop {
-                @include mixins.divider(right);
-                max-width: 68.1%;
-            }
-        }
-
-        &--next-videos {
-            @include mixins.divider(top);
-            width: 100%;
-
-            @include desktop {
-                border: none;
-                padding-left: 1.1875rem;
-                width: auto;
-            }
+        @include desktop {
+            border: none;
+            padding-top: 1.875rem;
+            padding-bottom: 4rem;
+            padding-left: 1.1875rem;
+            width: auto;
         }
     }
 }
