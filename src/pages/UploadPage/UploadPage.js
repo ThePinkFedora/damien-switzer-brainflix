@@ -4,8 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 /**
- * Upload page which provides access uploading a video via {@link UploadForm}
- * @returns
+ * Main content section for uploading a video via {@link UploadForm}
  */
 function UploadPage() {
   const navigate = useNavigate();
@@ -20,6 +19,8 @@ function UploadPage() {
   };
 
   const handleCancel = () => navigate("/");
+
+  document.title = `BrainFlix: Upload`;
 
   return (
     <main className="upload-page">

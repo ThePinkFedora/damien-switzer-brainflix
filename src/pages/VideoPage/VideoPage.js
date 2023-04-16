@@ -29,9 +29,8 @@ function VideoPage() {
 
   //Whenever videoId changes: Retrieve the video
   useEffect(() => {
-    //Clear error state
+    //Clear error state, and current video
     setError(null);
-    //Clear any current video
     setCurrentVideo(null);
     //If videoId is assigned, load the video
     if (videoId) {

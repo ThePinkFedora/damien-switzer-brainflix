@@ -35,6 +35,7 @@
     }
 
     &__success-image {
+        @include mixins.rounded-corners();
         margin: 2rem;
         width: 20rem;
     }
