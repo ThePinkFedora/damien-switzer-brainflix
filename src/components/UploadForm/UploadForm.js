@@ -3,33 +3,39 @@ import videoImage from "../../assets/images/upload-video-preview.jpg";
 import uploadIcon from "../../assets/images/upload.svg";
 import CtaButton from "../../components/CtaButton/CtaButton";
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 /**
  * Form element for uploading a videos.
  * @param {object} props
- * @param {({title: string, description:string, thumbnail: string} : object)=>{}} props.onUpload
- * @param {()=>{}} props.onCancel
+ * @param {({title: string, description:string, thumbnail: string} : object)=>{}} props.onUpload - Callback invoked with the upload details.
+ * @param {()=>{}} props.onCancel - Callback to cancel creating an upload.
  */
 function UploadForm({ onUpload, onCancel }) {
   const formRef = useRef();
-  const [values, setValues] = useState({
+  const [formValues, setValues] = useState({
     title: null,
     description: null,
     thumbnail: videoImage,
   });
 
+  /**
+   * Submit handler to invoke {@link onUpload} with {@link formValues}
+   */
   const handleSubmit = () => {
-    onUpload({ ...values });
+    onUpload({ ...formValues });
   };
 
+  /**
+   * Change handler, updates state with the modified form value
+   * @param {Event} event
+   */
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setValues({ ...values, [name]: value });
+    setValues({ ...formValues, [name]: value });
   };
 
-  const isTitleValid = () => values.title?.length > 0;
-  const isDescriptionValid = () => values.description?.length > 0;
+  const isTitleValid = () => formValues.title?.length > 0;
+  const isDescriptionValid = () => formValues.description?.length > 0;
   const isFormValid = () => isTitleValid() && isDescriptionValid();
 
   return (
@@ -41,7 +47,7 @@ function UploadForm({ onUpload, onCancel }) {
         <img
           className="upload-form__thumbnail"
           id="thumbnail"
-          src={values.thumbnail}
+          src={formValues.thumbnail}
           alt="thumbnail"
           name="thumbnail"
         />
@@ -56,7 +62,7 @@ function UploadForm({ onUpload, onCancel }) {
           type="text"
           name="title"
           placeholder="Add a title to your video"
-          value={values.title ?? ""}
+          value={formValues.title ?? ""}
           onChange={handleChange}
         />
         <label className="upload-form__label" htmlFor="description">
@@ -67,7 +73,7 @@ function UploadForm({ onUpload, onCancel }) {
           id="description"
           name="description"
           placeholder="Add a description to your video"
-          value={values.description ?? ""}
+          value={formValues.description ?? ""}
           onChange={handleChange}
         />
       </div>
@@ -82,7 +88,7 @@ function UploadForm({ onUpload, onCancel }) {
           />
         </div>
         <div className="upload-form__button-container">
-          <CtaButton text="CANCEL" style="secondary" onClick={onCancel} />
+          <CtaButton text="CANCEL" ctaStyle="secondary" onClick={onCancel} />
         </div>
       </div>
     </form>

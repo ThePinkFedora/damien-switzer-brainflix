@@ -24,7 +24,10 @@ function VideoPage() {
   useEffect(() => {
     getVideos()
       .then(setSideVideos)
-      .catch((error) => setError("Failed to load videos"));
+      .catch((error) => {
+        console.error(error);
+        setError("Failed to load videos");
+      });
   }, []);
 
   //Whenever videoId changes: Retrieve the video
@@ -36,7 +39,10 @@ function VideoPage() {
     if (videoId) {
       getVideoDetails(videoId)
         .then((video) => setCurrentVideo(video))
-        .catch((error) => setError("This video isn't available"));
+        .catch((error) => {
+          console.error(error);
+          setError("This video isn't available");
+        });
     }
   }, [videoId]);
 

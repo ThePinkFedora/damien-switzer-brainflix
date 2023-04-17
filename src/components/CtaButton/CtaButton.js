@@ -3,12 +3,14 @@ import "./CtaButton.scss";
 
 /**
  * A call-to-action button with assignable text and icon.
- * @param {object} prop
+ * @param {object} props
  * @param {string} props.text - The button text.
  * @param {string} props.iconSrc - The icon source url.
  * @param {string} props.iconAlt - The icon alt text.
  * @param {string} [props.href] - The href if this is a {@link Link} button
- * @returns
+ * @param {()=>{}} [props.onClick] - Callback invoke when the button is clicked
+ * @param {string} [props.ctaStyle="primary"] - The style type of the button. "primary" or "secondary"
+ * @param {boolean} [props.disabled=false] - Whether the button is disabled
  */
 function CtaButton({
   text,
@@ -16,9 +18,10 @@ function CtaButton({
   iconAlt,
   href,
   onClick,
-  style = "primary",
-  disabled,
+  ctaStyle: style = "primary",
+  disabled = false,
 }) {
+  //The inner content of the button
   const content = (
     <>
       {iconSrc && (
@@ -37,7 +40,12 @@ function CtaButton({
       {content}
     </Link>
   ) : (
-    <button className={className} onClick={onClick} disabled={disabled}>
+    <button
+      className={className}
+      type={onClick ? "button" : "default"}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {content}
     </button>
   );

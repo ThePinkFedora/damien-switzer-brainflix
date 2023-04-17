@@ -2,11 +2,14 @@ import { useLocation } from "react-router-dom";
 import "./NotFound.scss";
 import CtaButton from "../../components/CtaButton/CtaButton";
 
+/**
+ * Main content section for a 404 page.
+ */
 function NotFound() {
   const location = useLocation();
 
   return (
-    <section className="not-found">
+    <main className="not-found">
       <div className="not-found__content">
         <h1 className="not-found__title">4😲4</h1>
         <h2 className="not-found__subtitle">That's an error.</h2>
@@ -17,7 +20,7 @@ function NotFound() {
           <CtaButton text="TAKE ME HOME" href="/" />
         </div>
       </div>
-    </section>
+    </main>
   );
 }
 export default NotFound;

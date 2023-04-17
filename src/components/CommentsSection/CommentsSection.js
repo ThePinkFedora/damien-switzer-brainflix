@@ -1,24 +1,23 @@
 import "./CommentsSection.scss";
 import CommentForm from "../CommentForm/CommentForm";
 import CommentList from "../CommentList/CommentList";
-import { useState } from "react";
 import { postComment } from "../../js/apiUtils";
 
 /**
  * Section which displays a {@link CommentForm} and {@link CommentList}; allowing users to view and post comments.
  * @param {object} props
- * @param {object[]} props.comments - List of comments
- * @param {(comment: string) => {}} props.onComment - Callback for posting a comment
+ * @param {string} props.videoId - List of comments
+ * @param {(comment: string) => {}} props.onCommented - Callback for posting a comment
  * @returns
  */
 function CommentsSection({ comments, videoId, onCommented }) {
-  const commentList = [...comments].sort((a, b) => b.timestamp - a.timestamp);
+  const commentList = [...comments].sort((a, b) => b.timestamp - a.timestamp); //Sort newest -> oldest
   const countText = `${comments.length} Comment${
     comments.length !== 1 ? "s" : ""
   }`;
 
   /**
-   * Posts a comment to the server, then adds it to the displayed list
+   * Posts a comment to the server, then invokes ${@link onCommented}
    * @param {string} comment
    */
   const handleComment = (comment) => {
@@ -26,9 +25,16 @@ function CommentsSection({ comments, videoId, onCommented }) {
       name: "BrainFlix User",
       comment: comment,
     };
-    postComment(videoId, commentData).then((responseComment) => {
-      onCommented();
-    });
+    postComment(videoId, commentData)
+      .then(() => {
+        onCommented();
+      })
+      .catch((error) => {
+        console.error(error);
+        alert(
+          "An unexpected or occured when posting comment. Please try again."
+        );
+      });
   };
 
   return (
