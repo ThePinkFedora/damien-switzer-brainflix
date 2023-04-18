@@ -56,4 +56,18 @@ export function postComment(videoId, comment) {
   });
 }
 
+/**
+ * POSTs a video to the API.
+ * @param {{title: string, channel: string, description: string, image: string}} videoData - The new video object to be posted.
+ * @returns {Promise} - Promise which returns the data upon resolution, or the error upon rejection.
+ */
+export function postVideo(videoData) {
+  return new Promise(async (resolve, reject) => {
+    axios
+      .post(`${config.endpoint}videos/${appendApiKey()}`, videoData)
+      .then((response) => resolve(response.data))
+      .catch((error) => reject(error));
+  });
+}
+
 export const { apiKey } = config;

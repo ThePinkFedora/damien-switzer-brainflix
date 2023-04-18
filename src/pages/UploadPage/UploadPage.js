@@ -2,6 +2,7 @@ import "./UploadPage.scss";
 import UploadForm from "../../components/UploadForm/UploadForm";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { postVideo } from "../../js/apiUtils";
 
 /**
  * Main content section for uploading a video via {@link UploadForm}
@@ -14,8 +15,18 @@ function UploadPage() {
    * @param {{title: string, description: string, thumbnail: string}} uploadData
    */
   const handleUploadSubmitted = (uploadData) => {
-    setUploadValues({ ...uploadData });
-    setTimeout(() => navigate("/"), 2000);
+    const { title, description, thumbnail: image } = uploadData;
+    const videoPostData = {
+      title,
+      channel: "BrainFlix User",
+      description,
+      image,
+    };
+
+    postVideo(videoPostData).then(() => {
+      setUploadValues({ ...uploadData });
+      setTimeout(() => navigate("/"), 2000);
+    });
   };
 
   const handleCancel = () => navigate("/");
@@ -37,6 +48,7 @@ function UploadPage() {
             <img
               className="upload-page__success-image"
               src={uploadValues.thumbnail}
+              alt="thumbnail"
             />
             <p className="upload-page__success-message">
               '{uploadValues.title}' has been uploaded!
