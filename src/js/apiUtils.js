@@ -1,7 +1,7 @@
 import axios from "axios";
 const config = {
   apiKey: "9b47051e-91a5-4fd5-9f55-754841e529d7",
-  endpoint: "https://project-2-api.herokuapp.com/",
+  endpoint: "http://localhost:80/",
 };
 
 /**
