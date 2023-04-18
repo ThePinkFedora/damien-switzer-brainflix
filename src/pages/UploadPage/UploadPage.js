@@ -20,7 +20,7 @@ function UploadPage() {
       title,
       channel: "BrainFlix User",
       description,
-      image,
+      image: "http://localhost/images/image9.jpeg",
     };
 
     postVideo(videoPostData).then(() => {
