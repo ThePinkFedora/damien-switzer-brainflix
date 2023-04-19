@@ -1,6 +1,6 @@
 import "./VideoPage.scss";
 import { useEffect, useState } from "react";
-import { getVideos, getVideoDetails } from "../../js/apiUtils";
+import { getVideos, getVideoDetails, putVideoLike } from "../../js/apiUtils";
 import { useParams } from "react-router-dom";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
@@ -54,6 +54,15 @@ function VideoPage() {
   const handleCommented = () =>
     getVideoDetails(videoId).then((video) => setCurrentVideo(video));
 
+  /**
+   * Sends a like request for the current video.
+   */
+  const handleLike = () => {
+    putVideoLike(videoId).then((updatedVideo) => {
+      setCurrentVideo(updatedVideo);
+    });
+  };
+
   return (
     <main className="video-page">
       {
@@ -78,6 +87,7 @@ function VideoPage() {
                     views={currentVideo?.views}
                     likes={currentVideo?.likes}
                     timestamp={currentVideo?.timestamp}
+                    onLike={handleLike}
                   />
                   {currentVideo !== null && (
                     <CommentsSection

@@ -12,8 +12,18 @@ import TimestampLabel from "../TimestampLabel/TimestampLabel";
  * @param {number|string} [props.views] - The number of views.
  * @param {number|string} [props.likes] - The number of likes.
  * @param {number} [props.timestamp] - The date posted (in millis).
+ * @param {()=>{}} [props.onLike] - Callback for liking the video.
+ *
  */
-function VideoInfo({ title, channel, description, views, likes, timestamp }) {
+function VideoInfo({
+  title,
+  channel,
+  description,
+  views,
+  likes,
+  timestamp,
+  onLike,
+}) {
   title ??= "Loading...";
   channel ??= "Loading...";
   description ??= "Loading...";
@@ -37,7 +47,10 @@ function VideoInfo({ title, channel, description, views, likes, timestamp }) {
             <img className="video-info__icon" src={viewsIcon} alt="views" />
             {views}
           </div>
-          <button className="video-info__item video-info__item--right video-info__item--soft video-info__item--button">
+          <button
+            className="video-info__item video-info__item--right video-info__item--soft video-info__item--button"
+            onClick={onLike}
+          >
             <img className="video-info__icon" src={likesIcon} alt="likes" />
             {likes}
           </button>
