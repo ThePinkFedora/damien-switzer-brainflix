@@ -70,4 +70,18 @@ export function postVideo(videoData) {
   });
 }
 
+/**
+ * PUTs a like on a video.
+ * @param {{title: string, channel: string, description: string, image: string}} videoData - The new video object to be posted.
+ * @returns {Promise} - Promise which returns the data upon resolution, or the error upon rejection.
+ */
+export function putVideoLike(videoId) {
+  return new Promise(async (resolve, reject) => {
+    axios
+      .put(`${config.endpoint}videos/${videoId}/likes${appendApiKey()}`)
+      .then((response) => resolve(response.data))
+      .catch((error) => reject(error));
+  });
+}
+
 export const { apiKey, endpoint } = config;
