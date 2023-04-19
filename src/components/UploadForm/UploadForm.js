@@ -41,25 +41,33 @@ function UploadForm({ onUpload, onCancel }) {
   return (
     <form className="upload-form" ref={formRef}>
       <div className="upload-form__thumbnail-row">
-        <label className="upload-form__label" htmlFor="thumbnail">
+        <label
+          className="upload-form__label upload-form__label--file"
+          htmlFor="thumbnail"
+        >
           VIDEO THUMBNAIL
+          <img
+            className="upload-form__thumbnail"
+            src={formValues.thumbnail}
+            alt="thumbnail"
+          />
+          <input
+            type="file"
+            className="upload-form__file-input"
+            id="thumbnail"
+            name="thumbnail"
+            accept="image/png, image/jpeg"
+          />
         </label>
-        <img
-          className="upload-form__thumbnail"
-          id="thumbnail"
-          src={formValues.thumbnail}
-          alt="thumbnail"
-          name="thumbnail"
-        />
       </div>
       <div className="upload-form__fields-row">
         <label className="upload-form__label" htmlFor="title">
           TITLE YOUR VIDEO
         </label>
         <input
+          type="text"
           className="upload-form__field"
           id="title"
-          type="text"
           name="title"
           placeholder="Add a title to your video"
           value={formValues.title ?? ""}
