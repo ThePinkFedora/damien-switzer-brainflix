@@ -2,7 +2,7 @@ import "./UploadPage.scss";
 import UploadForm from "../../components/UploadForm/UploadForm";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { postVideo } from "../../js/apiUtils";
+import { postVideo, endpoint } from "../../js/apiUtils";
 
 /**
  * Main content section for uploading a video via {@link UploadForm}
@@ -20,7 +20,7 @@ function UploadPage() {
       title,
       channel: "BrainFlix User",
       description,
-      image: "http://localhost/images/image9.jpeg",
+      image: `${endpoint}images/image9.jpeg`,
     };
 
     postVideo(videoPostData).then(() => {

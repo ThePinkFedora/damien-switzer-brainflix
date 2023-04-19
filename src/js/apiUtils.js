@@ -1,7 +1,7 @@
 import axios from "axios";
 const config = {
   apiKey: "9b47051e-91a5-4fd5-9f55-754841e529d7",
-  endpoint: "http://localhost:80/",
+  endpoint: process.env.REACT_APP_BASE_URL,
 };
 
 /**
@@ -70,4 +70,4 @@ export function postVideo(videoData) {
   });
 }
 
-export const { apiKey } = config;
+export const { apiKey, endpoint } = config;
