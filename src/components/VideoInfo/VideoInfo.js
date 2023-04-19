@@ -37,10 +37,10 @@ function VideoInfo({ title, channel, description, views, likes, timestamp }) {
             <img className="video-info__icon" src={viewsIcon} alt="views" />
             {views}
           </div>
-          <div className="video-info__item video-info__item--right video-info__item--soft">
+          <button className="video-info__item video-info__item--right video-info__item--soft video-info__item--button">
             <img className="video-info__icon" src={likesIcon} alt="likes" />
             {likes}
-          </div>
+          </button>
         </div>
       </div>
       <p className="video-info__description">{description}</p>

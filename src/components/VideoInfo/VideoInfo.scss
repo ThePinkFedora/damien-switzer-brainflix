@@ -18,6 +18,10 @@
     }
 
     &__item {
+        text-align: left;
+        background-color: colors.$primary-white;
+        line-height: inherit;
+        border: none;
         margin-bottom: 0.75rem;
         flex-basis: 100%;
 
@@ -38,6 +42,20 @@
 
         &--soft {
             color: colors.$primary-gray;
+        }
+
+        &--button {
+            cursor: pointer;
+            padding: 0.2rem 0.2rem 0;
+            margin-top: -0.2rem;
+            transition: box-shadow 0.1s ease-out;
+            background-color: transparent;
+
+            &:hover {
+                filter: invert(36%) sepia(91%) saturate(1594%)
+                    hue-rotate(185deg) brightness(102%) contrast(107%);
+                box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.25);
+            }
         }
 
         &--left {
