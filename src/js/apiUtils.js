@@ -62,9 +62,18 @@ export function postComment(videoId, comment) {
  * @returns {Promise} - Promise which returns the data upon resolution, or the error upon rejection.
  */
 export function postVideo(videoData) {
+  const formData = new FormData();
+
+  formData.append("title", videoData.title);
+  formData.append("channel", videoData.channel);
+  formData.append("description", videoData.description);
+  if (videoData.thumbnailFile)
+    formData.append("thumbnail", videoData.thumbnailFile);
+  else formData.append("thumbnailUrl", videoData.thumbnailUrl);
+
   return new Promise(async (resolve, reject) => {
     axios
-      .post(`${config.endpoint}videos/${appendApiKey()}`, videoData)
+      .post(`${config.endpoint}videos/${appendApiKey()}`, formData)
       .then((response) => resolve(response.data))
       .catch((error) => reject(error));
   });

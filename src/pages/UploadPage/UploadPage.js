@@ -12,15 +12,16 @@ function UploadPage() {
   const [uploadValues, setUploadValues] = useState(null);
 
   /**
-   * @param {{title: string, description: string, thumbnail: string}} uploadData
+   * @param {{title: string, description: string, thumbnail: string,thumbnailFile: object}} uploadData
    */
-  const handleUploadSubmitted = (uploadData) => {
-    const { title, description, thumbnail: image } = uploadData;
+  const handleUploadSubmitted = async (uploadData) => {
+    const { title, description, thumbnail: image, thumbnailFile } = uploadData;
     const videoPostData = {
       title,
       channel: "BrainFlix User",
       description,
-      image: `${endpoint}images/image9.jpeg`,
+      thumbnailUrl: `${endpoint}images/image9.jpeg`,
+      thumbnailFile,
     };
 
     postVideo(videoPostData).then(() => {
