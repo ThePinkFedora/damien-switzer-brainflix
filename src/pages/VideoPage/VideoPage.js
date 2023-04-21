@@ -44,6 +44,8 @@ function VideoPage() {
           setError("This video isn't available");
         });
     }
+    //Scroll up to the top when the video changes
+    window.scrollTo({ behavior: "smooth", top: 0 });
   }, [videoId]);
 
   document.title = `BrainFlix: ${currentVideo?.title ?? error ?? "Loading..."}`;
