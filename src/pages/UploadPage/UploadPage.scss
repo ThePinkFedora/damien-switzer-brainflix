@@ -31,13 +31,14 @@
     }
 
     &__success-container {
+        @include mixins.flexbox(center, center, $direction: column);
         text-align: center;
     }
 
     &__success-image {
         @include mixins.rounded-corners();
-        margin: 2rem;
-        width: 20rem;
+        width: 100%;
+        max-width: 20rem;
     }
 
     &__success-message {

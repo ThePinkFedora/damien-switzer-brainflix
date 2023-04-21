@@ -12,16 +12,14 @@ function UploadPage() {
   const [uploadValues, setUploadValues] = useState(null);
 
   /**
+   * Upload submit handler. Posts the video to the server. Notifies the user of upload, then redirects home.
    * @param {{title: string, description: string, thumbnail: string,thumbnailFile: object}} uploadData
    */
   const handleUploadSubmitted = async (uploadData) => {
-    const { title, description, thumbnail: image, thumbnailFile } = uploadData;
     const videoPostData = {
-      title,
+      ...uploadData,
       channel: "BrainFlix User",
-      description,
       thumbnailUrl: `${endpoint}images/image9.jpeg`,
-      thumbnailFile,
     };
 
     postVideo(videoPostData).then(() => {
@@ -48,7 +46,7 @@ function UploadPage() {
           <div className="upload-page__success-container">
             <img
               className="upload-page__success-image"
-              src={uploadValues.thumbnail}
+              src={uploadValues.thumbnailUrl}
               alt="thumbnail"
             />
             <p className="upload-page__success-message">

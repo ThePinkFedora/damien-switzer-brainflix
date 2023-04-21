@@ -12,22 +12,25 @@ import { useRef, useState, useEffect } from "react";
  */
 function UploadForm({ onUpload, onCancel }) {
   const formRef = useRef();
-  const [formValues, setValues] = useState({
+  const [formValues, setFormValues] = useState({
     title: null,
     description: null,
-    thumbnail: videoImage,
+    thumbnailUrl: videoImage,
     thumbnailFile: null,
   });
 
   // When thumbnailFile changes: update the preview
   useEffect(() => {
     if (!formValues.thumbnailFile) {
-      setValues({ ...formValues, thumbnail: videoImage });
+      setFormValues((formValues) => ({
+        ...formValues,
+        thumbnailUrl: videoImage,
+      }));
       return;
     }
     //Setup object URL to access the image
     const objectUrl = URL.createObjectURL(formValues.thumbnailFile);
-    setValues({ ...formValues, thumbnail: objectUrl });
+    setFormValues((formValues) => ({ ...formValues, thumbnailUrl: objectUrl }));
 
     // Release the object url when the form is unmounted
     return () => URL.revokeObjectURL(objectUrl);
@@ -41,25 +44,24 @@ function UploadForm({ onUpload, onCancel }) {
   };
 
   /**
-   * Change handler, updates state with the modified form value
+   * Form Change handler, updates state with the modified form value
    * @param {Event} event
    */
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setValues({ ...formValues, [name]: value });
+    setFormValues({ ...formValues, [name]: value });
   };
 
   /**
    * File change handler, updates state with modified thumbnail value
-   * @param {*} event
-   * @returns
+   * @param {Event} event
    */
   const handleSelectFile = (event) => {
     if (!event.target.files || event.target.files.length === 0) {
-      setValues({ ...formValues, thumbnailFile: null });
+      setFormValues({ ...formValues, thumbnailFile: null });
       return;
     }
-    setValues({ ...formValues, thumbnailFile: event.target.files[0] });
+    setFormValues({ ...formValues, thumbnailFile: event.target.files[0] });
   };
 
   const isTitleValid = () => formValues.title?.length > 0;
@@ -76,7 +78,7 @@ function UploadForm({ onUpload, onCancel }) {
           VIDEO THUMBNAIL
           <img
             className="upload-form__thumbnail"
-            src={formValues.thumbnail}
+            src={formValues.thumbnailUrl}
             alt="thumbnail"
           />
           <input
