@@ -1,7 +1,7 @@
 import axios from "axios";
 const config = {
   apiKey: "9b47051e-91a5-4fd5-9f55-754841e529d7",
-  endpoint: process.env.REACT_APP_BASE_URL,
+  endpoint: process.env.REACT_APP_BASE_URL ?? "http://localhost:8080/",
 };
 
 /**

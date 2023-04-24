@@ -7,7 +7,7 @@ import { useRef, useState, useEffect } from "react";
 /**
  * Form element for uploading a videos.
  * @param {object} props
- * @param {({title: string, description:string, thumbnail: string} : object)=>{}} props.onUpload - Callback invoked with the upload details.
+ * @param {({title: string, description:string, thumbnailUrl: string, thumbnailFile: object} : object)=>{}} props.onUpload - Callback invoked with the upload details.
  * @param {()=>{}} props.onCancel - Callback to cancel creating an upload.
  */
 function UploadForm({ onUpload, onCancel }) {

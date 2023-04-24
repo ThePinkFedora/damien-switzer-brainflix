@@ -13,7 +13,7 @@ function UploadPage() {
 
   /**
    * Upload submit handler. Posts the video to the server. Notifies the user of upload, then redirects home.
-   * @param {{title: string, description: string, thumbnail: string,thumbnailFile: object}} uploadData
+   * @param {{title: string, description: string, thumbnailUrl: string, thumbnailFile: object}} uploadData
    */
   const handleUploadSubmitted = async (uploadData) => {
     const videoPostData = {
