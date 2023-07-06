@@ -19,7 +19,10 @@ export function getVideos() {
   return new Promise(async (resolve, reject) => {
     axios
       .get(`${config.endpoint}videos${appendApiKey()}`)
-      .then((response) => resolve(response.data))
+      .then((response) => {
+        const { data } = response;
+        resolve(data.map(video => ({ ...video, image: config.endpoint + video.image })))
+      })
       .catch((error) => reject(error));
   });
 }
@@ -33,7 +36,10 @@ export function getVideoDetails(videoId) {
   return new Promise(async (resolve, reject) => {
     axios
       .get(`${config.endpoint}videos/${videoId}${appendApiKey()}`)
-      .then((response) => resolve(response.data))
+      .then((response) => {
+        const { data } = response;
+        resolve({ ...data, image: config.endpoint + data.image });
+      })
       .catch((error) => reject(error));
   });
 }
