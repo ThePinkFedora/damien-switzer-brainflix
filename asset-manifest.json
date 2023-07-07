@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/damien-switzer-brainflix/static/css/main.f1d546a6.css",
-    "main.js": "/damien-switzer-brainflix/static/js/main.1a11b7dd.js",
+    "main.js": "/damien-switzer-brainflix/static/js/main.8dbc89ed.js",
     "static/media/upload-video-preview.jpg": "/damien-switzer-brainflix/static/media/upload-video-preview.313a407cf90c0668da07.jpg",
     "static/media/mohan-muruge.jpg": "/damien-switzer-brainflix/static/media/mohan-muruge.7f8e1b851a284bcfa377.jpg",
     "static/media/avenir-next-ltpro-regular.ttf": "/damien-switzer-brainflix/static/media/avenir-next-ltpro-regular.3f6c730b0f59f3838d71.ttf",
@@ -18,10 +18,10 @@
     "static/media/likes.svg": "/damien-switzer-brainflix/static/media/likes.de2e9fe2cf1e321215f40a9f1e902ccf.svg",
     "static/media/add-comment.svg": "/damien-switzer-brainflix/static/media/add-comment.26bc7a200a77fd1eb3c8aec190e24f1e.svg",
     "main.f1d546a6.css.map": "/damien-switzer-brainflix/static/css/main.f1d546a6.css.map",
-    "main.1a11b7dd.js.map": "/damien-switzer-brainflix/static/js/main.1a11b7dd.js.map"
+    "main.8dbc89ed.js.map": "/damien-switzer-brainflix/static/js/main.8dbc89ed.js.map"
   },
   "entrypoints": [
     "static/css/main.f1d546a6.css",
-    "static/js/main.1a11b7dd.js"
+    "static/js/main.8dbc89ed.js"
   ]
 }
