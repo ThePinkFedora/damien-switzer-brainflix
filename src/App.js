@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/damien-switzer-brainflix">
       <div className="app">
         <Navbar />
         <Routes>
